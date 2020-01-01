@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Footer /> Component Check the UI of the Footer component 1`] = `
+exports[`<ConsoleItem /> Component Check the UI of the ConsoleItem component 1`] = `
 Object {
-  "component": Footer {
+  "component": ConsoleItem {
     "$$": Object {
       "after_update": Array [],
       "before_update": Array [],
@@ -33,122 +33,34 @@ Object {
   },
   "container": <body>
     <div>
-      <footer>
-        <div
-          class="footer__logotype"
-        >
-          <img
-            alt="Gamecheap Logo"
-            src="../gamecheap-logo.png"
-          />
-           
-          <h2>
-            Gamecheap
-          </h2>
-        </div>
+      <div
+        class="console__item"
+      >
+        <img
+          alt="Item Imagen"
+          src="PS.png"
+        />
+         
+        <h1>
+          Play Station 4
+        </h1>
+         
+        <h2>
+          $1000 USD
+        </h2>
+         
+        <p>
+          Play Station 4 description and features
+        </p>
          
         <div
-          class="footer__links"
+          class="item__provider"
         >
-          <ul
-            class="footer__navigation"
-          >
-            <li
-              class="footer__links--title"
-            >
-              <p>
-                Company
-              </p>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Home
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                About
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Blog
-              </a>
-            </li>
-          </ul>
-           
-          <ul
-            class="footer__navigation"
-          >
-            <li
-              class="footer__links--title"
-            >
-              <p>
-                Product
-              </p>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Info
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Info
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Info
-              </a>
-            </li>
-          </ul>
+          <p>
+            Amazon
+          </p>
         </div>
-         
-        <div
-          class="footer__wrapper"
-        >
-          <span
-            class="footer__copyright"
-          >
-            <p>
-              Copyright 2020 Gamecheap. All rights reserved.
-            </p>
-          </span>
-           
-          <ul
-            class="footer__social"
-          >
-            <i
-              class="github"
-            />
-             
-            <a
-              href="."
-            >
-              freshxcrapingenchiladas@gmail.com
-            </a>
-          </ul>
-        </div>
-      </footer>
+      </div>
     </div>
   </body>,
   "debug": [Function],

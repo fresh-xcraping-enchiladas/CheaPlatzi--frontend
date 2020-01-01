@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Footer /> Component Check the UI of the Footer component 1`] = `
+exports[`<CategoryItem /> Component Check the UI of the CategoryItem component 1`] = `
 Object {
-  "component": Footer {
+  "component": CategoryItem {
     "$$": Object {
       "after_update": Array [],
       "before_update": Array [],
       "bound": Object {},
       "callbacks": Object {},
       "context": Map {},
-      "ctx": Array [],
+      "ctx": Array [
+        undefined,
+      ],
       "dirty": Array [
         -1,
       ],
@@ -27,128 +29,23 @@ Object {
         [Function],
       ],
       "on_mount": Array [],
-      "props": Object {},
+      "props": Object {
+        "category": 0,
+      },
       "update": [Function],
     },
+    "$capture_state": [Function],
+    "$inject_state": [Function],
+    "$set": [Function],
   },
   "container": <body>
     <div>
-      <footer>
-        <div
-          class="footer__logotype"
-        >
-          <img
-            alt="Gamecheap Logo"
-            src="../gamecheap-logo.png"
-          />
-           
-          <h2>
-            Gamecheap
-          </h2>
-        </div>
+      <div
+        class="category-item undefined"
+      >
          
-        <div
-          class="footer__links"
-        >
-          <ul
-            class="footer__navigation"
-          >
-            <li
-              class="footer__links--title"
-            >
-              <p>
-                Company
-              </p>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Home
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                About
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Blog
-              </a>
-            </li>
-          </ul>
-           
-          <ul
-            class="footer__navigation"
-          >
-            <li
-              class="footer__links--title"
-            >
-              <p>
-                Product
-              </p>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Info
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Info
-              </a>
-            </li>
-             
-            <li>
-              <a
-                href="."
-              >
-                Info
-              </a>
-            </li>
-          </ul>
-        </div>
          
-        <div
-          class="footer__wrapper"
-        >
-          <span
-            class="footer__copyright"
-          >
-            <p>
-              Copyright 2020 Gamecheap. All rights reserved.
-            </p>
-          </span>
-           
-          <ul
-            class="footer__social"
-          >
-            <i
-              class="github"
-            />
-             
-            <a
-              href="."
-            >
-              freshxcrapingenchiladas@gmail.com
-            </a>
-          </ul>
-        </div>
-      </footer>
+      </div>
     </div>
   </body>,
   "debug": [Function],

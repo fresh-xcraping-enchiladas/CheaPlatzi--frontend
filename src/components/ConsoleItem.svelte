@@ -37,7 +37,6 @@
 
   img {
     width: 130px;
-    height: 120px;
     margin: 0.5em;
   }
 </style>
