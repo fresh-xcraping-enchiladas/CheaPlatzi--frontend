@@ -1,82 +1,51 @@
 <script>
-  export let segment;
+ import Button from './Button.svelte'
 </script>
 
 <style>
-  nav {
-    border-bottom: 1px solid rgba(255, 62, 0, 0.1);
-    font-weight: 300;
-    padding: 0 1em;
+  .header{
+    height: 50px;
+    padding: 0 50px;
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0C4F83;
+    color: #FFF;
   }
-
-  ul {
+  .header-right{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .header-country{
+    padding-left: 20px;
+  }
+  h1 {
     margin: 0;
-    padding: 0;
+    font-size: 18px;
   }
-
-  /* clearfix */
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
+  @media screen and (min-width: 750px) {
+    .header-right, h1 {
+      font-size: 24px;
+    }
   }
-
-  li {
-    display: block;
-    float: left;
-  }
-
-  [aria-current] {
-    position: relative;
-    display: inline-block;
-  }
-
-  [aria-current]::after {
-    position: absolute;
-    content: "";
-    width: calc(100% - 1em);
-    height: 2px;
-    background-color: rgb(255, 62, 0);
-    display: block;
-    bottom: -1px;
-  }
-
-  a {
-    text-decoration: none;
-    padding: 1em 0.5em;
-    display: block;
+  @media screen and (min-width: 900px) {
+    h1 {
+      font-size: 32px;
+    }
+    .header-right, .header-country h1{
+      font-size: 24px;
+    }
   }
 </style>
 
-<nav>
-  <ul>
-    <li>
-      <a aria-current={segment === undefined ? 'page' : undefined} href=".">
-        home
-      </a>
-    </li>
-    <li>
-      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
-        about
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={segment === 'favorites' ? 'page' : undefined}
-        href="favorites">
-        favorites
-      </a>
-    </li>
-
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <li>
-      <a
-        rel="prefetch"
-        aria-current={segment === 'blog' ? 'page' : undefined}
-        href="blog">
-        blog
-      </a>
-    </li>
-  </ul>
+<nav class="header">
+  <h1>HunterPrice</h1>
+    <div class="header-right">
+      <Button text="Log In" />
+      <div class="header-country">
+        <h1>MEX 🇲🇽</h1>
+      </div>
+    </div>
 </nav>

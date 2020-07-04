@@ -1,3 +1,8 @@
+<script>
+  import TextInput from '../components/TextInput.svelte'
+  import CategoryContainer from '../components/CategoryContainer.svelte'
+</script>
+
 <style>
   h2,
   figure {
@@ -34,8 +39,10 @@
 </svelte:head>
 
 <main>
-  <h2>Explora tus consolas y video juegos favoritos</h2>
 
+  <h2>Explora tus consolas y video juegos favoritos</h2>
+  <TextInput placeholder="Search" />
+  <CategoryContainer/>
   <figure>
     <img alt="Nintendo" src="nintendo.jpeg" />
     <figcaption>Consolas y video juegos de Nintendo</figcaption>
