@@ -1,3 +1,12 @@
+<script>
+  import Category from "../components/Category.svelte";
+  import Carousel from "../components/Carousel.svelte";
+  import ConsoleItem from "../components/ConsoleItem.svelte";
+  import Login from "../components/Login.svelte";
+
+  import { currentUser } from "../stores/user";
+</script>
+
 <style>
   h2,
   figure {
@@ -6,9 +15,8 @@
   }
 
   h2 {
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-size: 22px;
+    font-weight: 400;
     margin: 0 0 0.5em 0;
   }
 
@@ -34,10 +42,26 @@
 </svelte:head>
 
 <main>
-  <h2>Explora tus consolas y video juegos favoritos</h2>
+  <h2>
+    {#if $currentUser}
+      Welcome back
+      <strong>{$currentUser.displayName}!</strong>
+    {:else}Explore the best Video Games & Consoles in your City.{/if}
+    <br />
+  </h2>
 
   <figure>
     <img alt="Nintendo" src="nintendo.jpeg" />
     <figcaption>Consolas y video juegos de Nintendo</figcaption>
   </figure>
+
+  <Category>
+    <Carousel>
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+    </Carousel>
+  </Category>
+
 </main>

@@ -3,7 +3,7 @@
   "description": "CheaPlatzi app - Frontend Side",
   "version": "0.0.1",
   "scripts": {
-    "dev": "sapper dev",
+    "dev": "sapper dev --open",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "firebase": "^7.15.5",
     "polka": "next",
     "sirv": "^0.4.0"
   },

@@ -5,8 +5,6 @@
   }
 </style>
 
-<main>
-  <footer>
-    <h2>CheaPlatzi 2020</h2>
-  </footer>
-</main>
+<footer>
+  <h2>CheaPlatzi 2020</h2>
+</footer>

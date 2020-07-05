@@ -1,4 +1,5 @@
 <script>
+  import Login from "../components/Login.svelte";
   export let segment;
 </script>
 
@@ -46,25 +47,30 @@
     padding: 1em 0.5em;
     display: block;
   }
+
+  nav > ul > li:nth-child(5) {
+    justify-content: flex-end;
+  }
+
+  nav > ul > li:nth-child(5) > a {
+    color: pink;
+  }
+
+  nav > ul > li:nth-child(6) > a {
+    color: pink;
+  }
 </style>
 
 <nav>
   <ul>
     <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
-        home
+        Home
       </a>
     </li>
     <li>
       <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
-        about
-      </a>
-    </li>
-    <li>
-      <a
-        aria-current={segment === 'favorites' ? 'page' : undefined}
-        href="favorites">
-        favorites
+        About
       </a>
     </li>
 
@@ -78,5 +84,33 @@
         blog
       </a>
     </li>
+    <span>
+
+      <li>
+        <a
+          aria-current={segment === 'favorites' ? 'page' : undefined}
+          href="favorites">
+          Favorites
+        </a>
+      </li>
+
+      <!-- li:nth-child(5) -->
+      <li>
+        <a
+          aria-current={segment === 'signup' ? 'page' : undefined}
+          href="signup">
+          Sign Up
+        </a>
+      </li>
+
+      <!-- li:nth-child(6) -->
+      <li>
+        <a aria-current={segment === 'login' ? 'page' : undefined} href="login">
+          Log In
+        </a>
+      </li>
+    </span>
   </ul>
+
+  <Login />
 </nav>
