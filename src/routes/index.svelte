@@ -3,8 +3,8 @@
   import Carousel from "../components/Carousel.svelte";
   import ConsoleItem from "../components/ConsoleItem.svelte";
   import Login from "../components/Login.svelte";
-  import TextInput from '../components/TextInput.svelte'
-  import CategoryContainer from '../components/CategoryContainer.svelte'
+  import TextInput from "../components/TextInput.svelte";
+  import CategoryContainer from "../components/CategoryContainer.svelte";
 
   import { currentUser } from "../stores/user";
 </script>
@@ -40,28 +40,34 @@
 </style>
 
 <svelte:head>
-  <title>CheaPlatzi</title>
+  <title>Gamecheap</title>
 </svelte:head>
 
 <main>
-<<<<<<< HEAD
   <h2>
     {#if $currentUser}
       Welcome back
       <strong>{$currentUser.displayName}!</strong>
     {:else}Explore the best Video Games & Consoles in your City.{/if}
+    <TextInput placeholder="Search" />
+
     <br />
   </h2>
-=======
->>>>>>> origin/dev
 
-  <h2>Explora tus consolas y video juegos favoritos</h2>
-  <TextInput placeholder="Search" />
-  <CategoryContainer/>
+  <CategoryContainer />
   <figure>
     <img alt="Nintendo" src="nintendo.jpeg" />
     <figcaption>Consolas y video juegos de Nintendo</figcaption>
   </figure>
+
+  <Category>
+    <Carousel>
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+    </Carousel>
+  </Category>
 
   <Category>
     <Carousel>

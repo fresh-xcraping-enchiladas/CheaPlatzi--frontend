@@ -2,8 +2,8 @@
   export let category;
 </script>
 
-<style >
-  .category-item{
+<style>
+  .category-item {
     width: 250px;
     height: 60px;
     border-radius: 50px;
@@ -14,36 +14,64 @@
     align-items: center;
     justify-content: space-between;
   }
-  .nintendo{
-    background: linear-gradient(to right, rgba(215,22,22,1) 0%, rgba(232,97,97,1) 100%);
-    color: #FFA3A8;
+  .nintendo {
+    background: linear-gradient(
+      to right,
+      rgba(215, 22, 22, 1) 0%,
+      rgba(232, 97, 97, 1) 100%
+    );
+    color: #ffa3a8;
     position: relative;
     right: 10vw;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
-  .playstation{
-    background: linear-gradient(to right, rgba(20,85,254,1) 0%, rgba(160,187,255,1) 100%);
-    color: #A9C6FF;
+  .playstation {
+    background: linear-gradient(
+      to right,
+      rgba(20, 85, 254, 1) 0%,
+      rgba(160, 187, 255, 1) 100%
+    );
+    color: #a9c6ff;
     position: relative;
     left: 10vw;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
-  .xbox{
-    background: linear-gradient(to right, rgba(19,127,17,1) 0%, rgba(146,253,143,1) 100%);
-    color: #A8ECBB;
+  .xbox {
+    background: linear-gradient(
+      to right,
+      rgba(19, 127, 17, 1) 0%,
+      rgba(146, 253, 143, 1) 100%
+    );
+    color: #a8ecbb;
     position: relative;
     right: 10vw;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
-  .category-item img{
+  .category-item img {
     height: 80%;
   }
-  @media screen and (min-width: 700px){
-    .category-item{
+
+  .nintendo:hover,
+  .playstation:hover,
+  .xbox:hover {
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 700px) {
+    .category-item {
       width: 500px;
       height: 120px;
       font-size: 36px;
     }
   }
-  @media screen and (min-width: 1000px){
-    .category-item{
+  @media screen and (min-width: 1000px) {
+    .category-item {
       width: 800px;
       height: 150px;
       font-size: 52px;
@@ -55,14 +83,14 @@
 <div class={`category-item ${category}`}>
   {#if category === 'nintendo' || category === 'Nintendo'}
     <p>Nintendo</p>
-    <img src="nintendo-logo.png" alt="">
+    <img src="nintendo-logo.png" alt="" />
   {/if}
   {#if category === 'playstation' || category === 'Playstation'}
     <p>PlayStation</p>
-    <img src="playstation.png" alt="">
+    <img src="playstation.png" alt="" />
   {/if}
   {#if category === 'xbox' || category === 'Xbox'}
     <p>Xbox</p>
-    <img src="xbox.png" alt="">
+    <img src="xbox.png" alt="" />
   {/if}
 </div>

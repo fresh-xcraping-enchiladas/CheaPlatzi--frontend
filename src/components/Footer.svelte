@@ -6,5 +6,5 @@
 </style>
 
 <footer>
-  <h2>CheaPlatzi 2020</h2>
+  <h2>Gamecheap 2020</h2>
 </footer>
