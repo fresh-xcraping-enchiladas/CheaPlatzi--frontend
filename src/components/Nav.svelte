@@ -151,8 +151,8 @@
       </figure>
     </a>
   </li>
+  
   <ul>
-
     <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
         Home
