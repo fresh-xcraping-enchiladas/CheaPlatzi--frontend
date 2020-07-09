@@ -53,9 +53,8 @@
   }
   main {
     position: relative;
-    max-width: 75em;
+    max-width: 80em;
     background-color: white;
-    padding: 2em;
     margin: 0 auto;
     box-sizing: border-box;
   }

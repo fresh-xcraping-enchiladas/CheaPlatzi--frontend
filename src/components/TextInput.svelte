@@ -13,6 +13,8 @@
     border-radius: 40px;
     font-size: 24px;
     color: #ab94c7;
+    position: absolute;
+    top: 55%;
     background-color: #fff;
   }
   @media screen and (min-width: 1000px) {
