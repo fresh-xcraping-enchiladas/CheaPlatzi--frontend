@@ -1,6 +1,7 @@
 <style>
   .category {
     margin: 0.2em;
+    padding: 2.2em;
   }
   .category__title {
     font-size: var(--last-searchedtxt);
