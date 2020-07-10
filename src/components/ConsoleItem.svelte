@@ -1,6 +1,7 @@
 <style>
   .console__item {
-    width: 170px;
+    width: 200px;
+    height: 300px;
     color: var(--textcolor-nintendo);
     text-align: center;
     margin-right: 1.3rem;
@@ -13,6 +14,10 @@
       var(--textcolor-nintendo)
     );
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px;
   }
   .item__provider {
     width: 50%;
@@ -36,7 +41,6 @@
   }
 
   img {
-    width: 130px;
     height: 120px;
     margin: 0.5em;
   }

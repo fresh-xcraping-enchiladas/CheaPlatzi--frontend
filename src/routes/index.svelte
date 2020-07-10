@@ -16,7 +16,8 @@
     margin: 0 0 0.5em 0;
   }
   .container {
-    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   .container__hero {
     background: linear-gradient(rgba(12, 79, 131, 0.6), rgba(0, 0, 0, 0.6)),

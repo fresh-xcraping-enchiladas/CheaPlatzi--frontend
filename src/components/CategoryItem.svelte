@@ -6,7 +6,7 @@
   .category-item {
     width: 250px;
     height: 60px;
-    border-radius: 50px;
+    border-radius: 15px;
     padding: 0 20px;
     margin: 0 auto 40px;
     font-size: 20px;
@@ -15,12 +15,8 @@
     justify-content: space-between;
   }
   .nintendo {
-    background: linear-gradient(
-      to right,
-      rgba(215, 22, 22, 1) 0%,
-      rgba(232, 97, 97, 1) 100%
-    );
-    color: #ffa3a8;
+    background: #E50020;
+    color: #fff;
     position: relative;
     right: 10vw;
     cursor: pointer;
@@ -28,12 +24,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   .playstation {
-    background: linear-gradient(
-      to right,
-      rgba(20, 85, 254, 1) 0%,
-      rgba(160, 187, 255, 1) 100%
-    );
-    color: #a9c6ff;
+    background: #007AFF;
+    color: #fff;
     position: relative;
     left: 10vw;
     cursor: pointer;
@@ -41,12 +33,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   .xbox {
-    background: linear-gradient(
-      to right,
-      rgba(19, 127, 17, 1) 0%,
-      rgba(146, 253, 143, 1) 100%
-    );
-    color: #a8ecbb;
+    background: #107C10;
+    color: #fff;
     position: relative;
     right: 10vw;
     cursor: pointer;

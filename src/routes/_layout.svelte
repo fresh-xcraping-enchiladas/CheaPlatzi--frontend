@@ -52,10 +52,7 @@
     background-color: var(--variant-white);
   }
   main {
-    position: relative;
-    max-width: 80em;
     background-color: white;
-    margin: 0 auto;
     box-sizing: border-box;
   }
 </style>

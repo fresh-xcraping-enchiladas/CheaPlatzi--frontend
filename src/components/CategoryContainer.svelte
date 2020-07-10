@@ -7,3 +7,4 @@
   <CategoryItem category="playstation" />
   <CategoryItem category="xbox" />
 </div>
+
