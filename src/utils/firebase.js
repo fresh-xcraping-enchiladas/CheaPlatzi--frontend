@@ -1,4 +1,5 @@
-import { tick } from "svelte";
+import { tick } from 'svelte';
+import swal from 'sweetalert';
 
 export const signUp = () => {
 
@@ -21,6 +22,13 @@ export const logIn = () => {
     .catch(function (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
+
+
+      if (errorCode === 'auth/wrong-password') {
+        swal('Wrong password', 'Please try again', 'error');
+      } else {
+        alert(errorMessage)
+      }
     });
 }
 
@@ -51,5 +59,5 @@ export const createLoginButton = () => {
   const ui =
     firebaseui.auth.AuthUI.getInstance() ||
     new firebaseui.auth.AuthUI(firebase.auth());
-  ui.start("#firebaseui-auth-container", uiConfig);
+  ui.start('#firebaseui-auth-container', uiConfig);
 };
