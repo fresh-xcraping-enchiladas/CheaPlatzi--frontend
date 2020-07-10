@@ -8,153 +8,126 @@
 </script>
 
 <style>
-  .header {
+  nav {
     border-bottom: 1px solid rgba(255, 62, 0, 0.1);
-    font-weight: 300;
-    height: 5.2rem;
+    height: 60px;
     padding: 0 50px;
     display: flex;
-    font-size: 18px;
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-blue);
     color: var(--primary-white);
   }
-  .header-country {
-    padding-left: 20px;
-  }
-  h1 {
-    margin: 0;
-    font-size: 18px;
-  }
 
-  @media (max-width: 375px) and (min-width: 375px) {
-    .header {
-      padding: 0 20px;
-    }
-    figure {
-      margin: 0;
-    }
-    #sapper > nav > li > a > figure > img {
-      height: auto;
-      width: auto;
-      max-width: 5.6rem;
-    }
-    #sapper > nav > ul > li:nth-child(1) > a,
-    #sapper > nav > ul > li:nth-child(2) > a,
-    #sapper > nav > ul > li:nth-child(3) > a,
-    #sapper > nav > ul > li:nth-child(4) > a,
-    #sapper > nav > ul > li:nth-child(5) > a {
-      display: none;
-    }
-    #sapper > nav > ul > li:nth-child(6) > a {
-      font-size: 12px;
-    }
-    h1 {
-      font-size: 12px;
-      display: inline-block;
-    }
-    .header-country {
-      padding-left: 5px;
-    }
-  }
-
-  @media (max-width: 414px) and (min-width: 412px) {
-    .header {
-      padding: 0 20px;
-    }
-    figure {
-      margin: 0;
-    }
-    #sapper > nav > li > a > figure > img {
-      height: auto;
-      width: auto;
-      max-width: 7.5rem;
-    }
-    /* #sapper > nav > li > a > figure > h1 {
-      display: none;
-    } */
-    #sapper > nav > ul > li:nth-child(1) > a,
-    #sapper > nav > ul > li:nth-child(2) > a,
-    #sapper > nav > ul > li:nth-child(3) > a,
-    #sapper > nav > ul > li:nth-child(4) > a,
-    #sapper > nav > ul > li:nth-child(5) > a {
-      display: none;
-    }
-    #sapper > nav > ul > li:nth-child(6) > a {
-      font-size: 15px;
-    }
-    h1 {
-      font-size: 12px;
-      display: inline-block;
-    }
-    .header-country {
-      padding-left: 5px;
-    }
-  }
-
-  @media screen and (min-width: 750px) {
-  }
-
-  @media screen and (min-width: 900px) {
-    h1 {
-      font-size: 32px;
-    }
-    .header-country h1 {
-      font-size: 24px;
-    }
-  }
-  figure {
+  nav .logo {
     display: flex;
-    justify-content: center;
     align-items: center;
   }
-  img {
-    height: auto;
-    width: auto;
-    max-width: 8rem;
+
+  nav .logo a img {
+    height: 60px;
   }
-  ul {
-    margin: 0;
-    padding: 0;
+
+   nav .logo h1 {
+     font-size: 18px;
+     margin: 0;
+   }
+
+
+  nav ul {
+    float: right;
+    margin-right: 15px;
+    list-style: none;
   }
-  ul::after {
-    content: "";
-    display: block;
-    clear: both;
+
+  nav ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 15px;
   }
-  li {
-    display: block;
-    float: left;
-  }
-  a {
-    text-decoration: none;
-    padding: 0em 0.5em;
-    display: block;
-    color: var(--variant-blue);
-    transition: color 0.2s ease-in-out;
-  }
-  a:hover {
+
+  nav ul li a {
+    position: relative;
+    padding: 5px 0;
     color: var(--primary-white);
+    font-size: 18px;
+    text-decoration: none;
   }
-  nav > ul > li:nth-child(5) > a {
-    color: var(--variant-blue);
+  nav ul li p {
+    position: relative;
+    padding: 5px 0;
+    color: var(--primary-white);
+    font-size: 18px;
+    margin: 0;
   }
+
+  label #sign-one,
+  label #sign-two {
+    font-size: 30px;
+    color: #fff;
+    line-height: 50px;
+    margin-right: 30px;
+    cursor: pointer;
+    display:none;
+  }
+
+  #res-menu {
+    display: none;
+  }
+
+
+  @media (max-width: 870px) {
+    label #sign-one {
+      display: block;
+    }
+
+    nav ul {
+      position: fixed;
+      width: 80%;
+      top: 60px;
+      left: -100%;
+      text-align: center;
+      transition: .5s;
+      z-index: 10;
+      background-color: var(--primary-blue);
+    }
+
+    nav ul li {
+      display: block;
+      margin: 40px 0;
+      line-height: 30px;
+    }
+
+    nav ul li a,
+    nav ul li p {
+      font-size: 20px;
+    }
+
+    #res-menu:checked ~ ul {
+      left: 0;
+    }
+    #res-menu:checked ~ label #sign-one {
+      display: none;
+    }
+  }
+
 </style>
 
-<nav class="header">
-  <li>
-    <a aria-current={segment === undefined ? 'page' : undefined} href=".">
-      <figure>
-        <img src="../gamecheap-logo.png" alt="Gamecheap Logo" />
-        <h1>Gamecheap</h1>
-      </figure>
+<nav>
+  <input type="checkbox" id="res-menu" />
+  <label for="res-menu">
+    <i class="fa fa-bars" id="sign-one"></i>
+    <i class="fa fa-times" id="sign-two"></i>
+  </label>
+  <div class="logo">
+    <a aria-current={segment === undefined ? 'page' : undefined} href="/">
+      <img src="../gamecheap-logo.png" alt="Gamecheap Logo" />
     </a>
-  </li>
-  
+    <h1>Gamecheap</h1>
+  </div>
   <ul>
     <li>
-      <a aria-current={segment === undefined ? 'page' : undefined} href=".">
+      <a aria-current={segment === undefined ? 'page' : undefined} href="/">
         Home
       </a>
     </li>
@@ -163,9 +136,6 @@
         About
       </a>
     </li>
-
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
     <li>
       <a
         rel="prefetch"
@@ -174,7 +144,6 @@
         Blog
       </a>
     </li>
-
     <li>
       <a
         aria-current={segment === 'favorites' ? 'page' : undefined}
@@ -182,13 +151,11 @@
         Favorites
       </a>
     </li>
-
     <li>
       <a aria-current={segment === 'signup' ? 'page' : undefined} href="signup">
         Sign Up
       </a>
     </li>
-
     <li>
       {#if !$currentUser}
         <a aria-current={segment === 'login' ? 'page' : undefined} href="login">
@@ -198,11 +165,8 @@
         <Login />
       {/if}
     </li>
-
     <li>
-      <div class="header-country">
-        <h1>MEX 🇲🇽</h1>
-      </div>
+      <p>MEX 🇲🇽</p>
     </li>
   </ul>
 </nav>
