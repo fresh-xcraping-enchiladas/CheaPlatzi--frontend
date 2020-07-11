@@ -9,13 +9,13 @@
     border-radius: 15px;
     padding: 0 20px;
     margin: 0 auto 40px;
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .nintendo {
-    background: #E50020;
+    background: #e50020;
     color: #fff;
     position: relative;
     right: 10vw;
@@ -24,7 +24,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   .playstation {
-    background: #007AFF;
+    background: #007aff;
     color: #fff;
     position: relative;
     left: 10vw;
@@ -33,7 +33,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   .xbox {
-    background: #107C10;
+    background: #107c10;
     color: #fff;
     position: relative;
     right: 10vw;

@@ -1,30 +1,33 @@
 <script>
-  export let placeholder = "Search";
+  export let placeholder = "Find your favorite console";
 </script>
 
 <style>
+  .container-input {
+    width: 500px;
+    margin-top: 30px;
+  }
   input {
     height: 40px;
-    width: 80%;
-    border: 1px solid #46274f;
-    margin: 50px 10%;
-    outline: none;
+    width: 100%;
     padding-left: 20px;
-    border-radius: 40px;
+    border-radius: 50px;
     font-size: 24px;
-    color: #ab94c7;
-    position: absolute;
-    top: 55%;
+    color: #000;
     background-color: #fff;
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (max-width: 480px) {
+    .container-input {
+      width: 100%;
+      margin-top: 10px;
+    }
     input {
       height: 60px;
-      font-size: 36px;
+      font-size: 20px;
     }
   }
 </style>
 
-<div class="input">
+<div class="container-input">
   <input type="text" name="input" {placeholder} id="" />
 </div>
