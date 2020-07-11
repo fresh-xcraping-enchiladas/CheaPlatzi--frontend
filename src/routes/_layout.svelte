@@ -63,10 +63,7 @@
     padding: 0;
   }
   main {
-    position: relative;
-    max-width: 80em;
     background-color: white;
-    margin: 0 auto;
     box-sizing: border-box;
     flex: 1;
   }
