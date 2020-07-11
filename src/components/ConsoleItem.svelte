@@ -1,6 +1,11 @@
+<script>
+  export let segment;
+</script>
+
 <style>
   .console__item {
-    width: 170px;
+    width: 200px;
+    height: 300px;
     color: var(--textcolor-nintendo);
     text-align: center;
     margin-right: 1.3rem;
@@ -13,6 +18,10 @@
       var(--textcolor-nintendo)
     );
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px;
   }
   .item__provider {
     width: 50%;
@@ -39,13 +48,18 @@
     width: 130px;
     margin: 0.5em;
   }
+  a {
+    text-decoration: none;
+  }
 </style>
 
 <div class="console__item">
-  <img src="PS.png" alt="Item Imagen" />
-  <h1>Play Station 4</h1>
-  <h2>$1000 USD</h2>
-  <p>Play Station 4 description and features</p>
+  <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
+    <img src="PS.png" alt="Item Imagen" />
+    <h1>Play Station 4</h1>
+    <h2>$1000 USD</h2>
+    <p>Play Station 4 description and features</p>
+  </a>
   <div class="item__provider">
     <p>Amazon</p>
   </div>

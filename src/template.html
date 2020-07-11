@@ -10,44 +10,46 @@
     <link rel="stylesheet" href="global.css" />
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link
       type="text/css"
       rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.5.1/firebase-ui-auth.css"
+      href="https://www.gstatic.com/firebasejs/ui/4.5.2/firebase-ui-auth.css"
     />
 
     %sapper.styles% %sapper.head%
   </head>
   <body>
     <div id="sapper">%sapper.html%</div>
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.5.2/firebase-ui-auth.js"></script>
 
     <script>
       var firebaseConfig = {
-        apiKey: "AIzaSyDGSUptuEqcZ6Gr0Q3TBqcFG50YlFB_MzE",
-        authDomain: "cheaplatzi-4870b.firebaseapp.com",
-        databaseURL: "https://cheaplatzi-4870b.firebaseio.com",
-        projectId: "cheaplatzi-4870b",
-        storageBucket: "cheaplatzi-4870b.appspot.com",
-        messagingSenderId: "185389631800",
-        appId: "1:185389631800:web:78112c660b5192cfc599cd",
-        measurementId: "G-ZB879GL08Y",
+        apiKey: 'AIzaSyDGSUptuEqcZ6Gr0Q3TBqcFG50YlFB_MzE',
+        authDomain: 'cheaplatzi-4870b.firebaseapp.com',
+        databaseURL: 'https://cheaplatzi-4870b.firebaseio.com',
+        projectId: 'cheaplatzi-4870b',
+        storageBucket: 'cheaplatzi-4870b.appspot.com',
+        messagingSenderId: '185389631800',
+        appId: '1:185389631800:web:78112c660b5192cfc599cd',
+        measurementId: 'G-ZB879GL08Y',
       };
-      // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
+
+    <script
+      src="https://kit.fontawesome.com/c414985c5f.js"
+      crossorigin="anonymous"
+    ></script>
 
     %sapper.scripts%
   </body>

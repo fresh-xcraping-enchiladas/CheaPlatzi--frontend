@@ -1,7 +1,9 @@
 <style>
   .carousel {
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 30px;
   }
 </style>
 
