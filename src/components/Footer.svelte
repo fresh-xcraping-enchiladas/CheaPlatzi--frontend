@@ -1,3 +1,7 @@
+<script>
+  export let segment;
+</script>
+
 <style>
   footer {
     background-color: var(--variant-white);
@@ -9,7 +13,10 @@
   a {
     text-decoration: none;
   }
-
+  i {
+    font-size: 25px;
+    padding: 0 7px 0;
+  }
   img {
     width: 100px;
     height: 110px;
@@ -20,6 +27,9 @@
     justify-content: center;
     margin: 0px 40px;
     padding: 48px 24px 0px 0px;
+  }
+  .footer__links p {
+    text-align: center;
   }
 
   .footer__navigation {
@@ -62,6 +72,7 @@
   .footer__social {
     display: inline-flex;
     gap: normal;
+    padding: 0;
   }
 
   @media (max-width: 375px) {
@@ -70,6 +81,9 @@
       text-align: center;
     }
     .footer__social {
+      display: block;
+    }
+    .footer__social a {
       color: var(--lightpurple-text);
       padding: 0;
     }
@@ -86,16 +100,22 @@
   <div class="footer__links">
     <ul class="footer__navigation">
       <li class="footer__links--title">
-        <p>Company</p>
+        <p>Gamecheap</p>
       </li>
       <li>
-        <a href=".">Home</a>
+        <a aria-current={segment === 'home' ? 'page' : undefined} href="/">
+          Home
+        </a>
       </li>
       <li>
-        <a href=".">About</a>
+        <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
+          About
+        </a>
       </li>
       <li>
-        <a href=".">Blog</a>
+        <a aria-current={segment === 'blog' ? 'page' : undefined} href="blog">
+          Blog
+        </a>
       </li>
     </ul>
 
@@ -104,23 +124,29 @@
         <p>Product</p>
       </li>
       <li>
-        <a href=".">Info</a>
+        <a
+          href="https://www.notion.so/CheaPlatzi-s-Engineering-Wiki-3f897bf0888d40ffb7388e7f001ad133"
+          target="_blank">
+          Docs
+        </a>
       </li>
       <li>
-        <a href=".">Info</a>
+        <a href=".">Brand</a>
       </li>
       <li>
-        <a href=".">Info</a>
+        <a href=".">The Team</a>
       </li>
     </ul>
   </div>
 
   <div class="footer__wrapper">
     <span class="footer__copyright">
-      <p>Copyright 2020 Gamecheap. All rights reserved.</p>
+      <p>Copyright © 2020 Gamecheap. All rights reserved.</p>
     </span>
     <ul class="footer__social">
-      <i class="github" />
+      <a href="https://github.com/fresh-xcraping-enchiladas" target="_blank">
+        <i class="fab fa-github" />
+      </a>
       <a href=".">freshxcrapingenchiladas@gmail.com</a>
     </ul>
   </div>

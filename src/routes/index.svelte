@@ -10,73 +10,64 @@
 </script>
 
 <style>
-  h2 {
-    font-size: 22px;
-    font-weight: 400;
-    margin: 0 0 0.5em 0;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
   .container__hero {
-    background: linear-gradient(rgba(12, 79, 131, 0.6), rgba(0, 0, 0, 0.6)),
-      url(https://images.unsplash.com/photo-1585620385456-4759f9b5c7d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    background: url(https://gamecheap-resources.s3.amazonaws.com/hero-img.jpeg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     height: 400px;
-    position: relative;
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .text__hero h2 {
+  .container__hero h2 {
     color: white;
     text-transform: uppercase;
     margin: 0;
-    width: 95%;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    font-size: 3rem;
+    width: 50%;
+    font-size: 2.8rem;
     text-align: center;
-    transform: translate(-50%, -50%);
+    line-height: 56px;
   }
-  @media (max-width: 375px) {
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+
+  @media screen and (max-width: 480px) {
     .container {
-      width: 375px;
+      width: 100%;
     }
-    .text__hero h2 {
-      font-size: 2rem;
-      width: 85%;
-      font-weight: 500;
-    }
-  }
-  @media (min-width: 480px) {
-    h2 {
-      font-size: 4em;
+
+    .container__hero h2 {
+      font-size: 1.7rem;
+      width: 80%;
+      line-height: 30px;
     }
   }
 </style>
 
 <svelte:head>
-  <title>Gamecheap</title>
+  <title>Gamecheap | Find your favorite console or videogames</title>
 </svelte:head>
 
-<main>
+<div class="page-index">
   {#if $currentUser}
     <h2>
       Welcome back
       <strong>{$currentUser.displayName}!</strong>
     </h2>
   {:else}
-    <div class="container__hero text__hero">
-      <h2>Explore the best Video Games & Consoles in your City.</h2>
-      <div>
-        <TextInput placeholder="Search" />
-      </div>
+    <div class="container__hero">
+      <h2>Explore the best videogames and consoles in your city.</h2>
+      <TextInput placeholder="Find your favorite console or videogames" />
     </div>
   {/if}
-
   <div class="container">
     <CategoryContainer />
 
@@ -110,4 +101,4 @@
       </Carousel>
     </Category>
   </div>
-</main>
+</div>

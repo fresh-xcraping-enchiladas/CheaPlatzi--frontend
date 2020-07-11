@@ -1,46 +1,44 @@
 <style>
-  @media (max-width: 320px) {
-    .about__container {
-      height: 100vh;
-    }
-    .about__container--description {
-      padding: 0;
-    }
-    .about__container--info {
-      display: block;
-      padding: 1em;
-      border-radius: 0;
-    }
-    img {
-      border: 10px solid red;
-    }
+  .about__container {
+    height: 400px;
+    background-color: #eaeaea;
+    padding: 3rem;
+  }
+  .about__container--info {
+    display: flex;
+    background-color: var(--primary-white);
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  .about__container--description {
+    padding: 1.5rem;
+    width: 50%;
+  }
+  .about__container--img {
+    width: 50%;
+  }
+  .about__container--img img {
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
   }
 
-  @media (min-width: 900px) {
+  @media screen and (max-width: 500px) {
     .about__container {
-      display: flex;
-      padding: 2em;
-      justify-content: center;
-      background-color: #eaeaea;
+      height: auto;
+      padding: 1.3rem;
     }
     .about__container--info {
-      display: grid;
-      grid-template-columns: 25% 25% 25% 25%;
-      position: relative;
-      width: 75%;
-      background-color: var(--primary-white);
-      padding: 3rem;
-      border-radius: 20px;
+      flex-direction: column;
     }
+
     .about__container--description {
-      grid-column: 1 / span 2;
-      padding: 3em 4em 0 0;
+      width: 80%;
     }
+
     .about__container--img {
-      position: absolute;
-      left: 50%;
-      top: 10%;
-      /* grid-column: 3 / span 2; */
+      width: 100%;
     }
   }
 </style>
@@ -74,7 +72,9 @@
       </p>
     </div>
     <div class="about__container--img">
-      <img src="../modern-gamepads_127657-18487.jpg" alt="About img" />
+      <img
+        src="https://gamecheap-resources.s3.amazonaws.com/about-img.jpg"
+        alt="About img" />
     </div>
   </div>
 </div>

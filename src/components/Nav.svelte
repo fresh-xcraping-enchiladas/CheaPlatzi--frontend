@@ -28,11 +28,10 @@
     height: 60px;
   }
 
-   nav .logo h1 {
-     font-size: 18px;
-     margin: 0;
-   }
-
+  nav .logo h1 {
+    font-size: 18px;
+    margin: 0;
+  }
 
   nav ul {
     float: right;
@@ -68,13 +67,12 @@
     line-height: 50px;
     margin-right: 30px;
     cursor: pointer;
-    display:none;
+    display: none;
   }
 
   #res-menu {
     display: none;
   }
-
 
   @media (max-width: 870px) {
     label #sign-one {
@@ -87,7 +85,7 @@
       top: 60px;
       left: -100%;
       text-align: center;
-      transition: .5s;
+      transition: 0.5s;
       z-index: 10;
       background-color: var(--primary-blue);
     }
@@ -110,14 +108,13 @@
       display: none;
     }
   }
-
 </style>
 
 <nav>
   <input type="checkbox" id="res-menu" />
   <label for="res-menu">
-    <i class="fa fa-bars" id="sign-one"></i>
-    <i class="fa fa-times" id="sign-two"></i>
+    <i class="fa fa-bars" id="sign-one" />
+    <i class="fa fa-times" id="sign-two" />
   </label>
   <div class="logo">
     <a aria-current={segment === undefined ? 'page' : undefined} href="/">

@@ -38,6 +38,7 @@
     position: absolute;
     left: 83%;
     top: 5%;
+    font-size: 24px;
   }
   img {
     width: 325px;
@@ -58,7 +59,7 @@
 </style>
 
 <div class="console__item">
-  <i class="fal fa-heart fav__icon" />
+  <i class="far fa-heart" />
   <img src="PS.png" alt="Item Imagen" />
   <h1>Play Station 4</h1>
   <div class="console__description">

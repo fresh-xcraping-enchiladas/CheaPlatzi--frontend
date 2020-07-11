@@ -59,8 +59,8 @@
     <h1>Play Station 4</h1>
     <h2>$1000 USD</h2>
     <p>Play Station 4 description and features</p>
-    <div class="item__provider">
-      <p>Amazon</p>
-    </div>
   </a>
+  <div class="item__provider">
+    <p>Amazon</p>
+  </div>
 </div>
