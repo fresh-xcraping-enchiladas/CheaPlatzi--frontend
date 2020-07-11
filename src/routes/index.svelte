@@ -44,6 +44,11 @@
     .container {
       width: 375px;
     }
+    .text__hero h2 {
+      font-size: 2rem;
+      width: 85%;
+      font-weight: 500;
+    }
   }
   @media (min-width: 480px) {
     h2 {

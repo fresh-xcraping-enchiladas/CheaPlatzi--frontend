@@ -9,6 +9,7 @@
 <style>
   .form__container {
     text-align: center;
+    padding: 1em;
   }
   .form__container--input {
     width: 400px;
@@ -20,13 +21,12 @@
   }
   input {
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     outline: none;
     height: 24px;
     text-align: center;
-    border: 1px solid #b1b1b1;
-    border-radius: 5px;
-    margin-bottom: 3px;
+    border: none;
+    border-bottom: 0.8px solid var(--purple-button);
   }
   button {
     border: none;
@@ -39,21 +39,32 @@
     outline: none;
     cursor: pointer;
   }
+
   a {
     text-decoration: none;
     color: var(--lightpurple-text);
   }
-  @media (max-width: 375px) {
+  @media (min-width: 320px) {
+    .form__container {
+      padding: 5em 2em;
+      height: 50vh;
+    }
     .form__container--input {
       width: 100%;
     }
     h2 {
       font-size: 1.5rem;
       font-weight: 600;
+      margin-bottom: 2rem;
     }
-    input,
+    input {
+      width: 100%;
+    }
+
     button {
-      width: 80%;
+      width: 35%;
+      border-radius: 24px;
+      margin-top: 2em;
     }
   }
   @media (min-width: 412px) {
@@ -69,13 +80,15 @@
       width: 80%;
     }
   }
-  @media screen and (min-width: 750px) {
+  @media (min-width: 750px) {
     h2 {
       font-size: 3.2em;
     }
-    input,
+    input {
+      width: 30%;
+    }
     button {
-      width: 50%;
+      width: 20%;
     }
   }
 </style>
@@ -83,8 +96,8 @@
 <div class="form__container" id="firebaseui-auth-container">
   <h2>Log in to Gamecheap</h2>
   <div class="form__container--input">
-    <input id="emailLog" type="email" placeholder="you@email.com" />
-    <input id="passwrdLog" type="password" placeholder="password" />
+    <input id="emailLog" type="email" placeholder="you@domain.com" />
+    <input id="passwrdLog" type="password" placeholder="Password" />
     <button
       on:click={() => {
         logIn();
@@ -100,6 +113,6 @@
   </div>
   {#if !$currentUser}
     <p>---------- Or ----------</p>
-    <Login />
+    <Login class="google__button" />
   {/if}
 </div>

@@ -3,6 +3,7 @@
     background-color: var(--variant-white);
     color: #000;
     gap: normal;
+    widows: 100%;
   }
 
   a {

@@ -46,10 +46,21 @@
     --card-title: 18px;
     --card-price: 12px;
     --card-description: 10px;
+
+    /* Fonts on Mobile: MainItem*/
+
+    --item-title: 1.8rem;
+    --item-price: 20px;
+    --item-description: 19px;
   }
 
   :global(body) {
     background-color: var(--variant-white);
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
   }
   main {
     position: relative;
@@ -57,6 +68,7 @@
     background-color: white;
     margin: 0 auto;
     box-sizing: border-box;
+    flex: 1;
   }
 </style>
 

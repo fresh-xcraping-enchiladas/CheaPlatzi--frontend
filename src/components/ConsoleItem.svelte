@@ -1,3 +1,7 @@
+<script>
+  export let segment;
+</script>
+
 <style>
   .console__item {
     width: 170px;
@@ -40,14 +44,19 @@
     height: 120px;
     margin: 0.5em;
   }
+  a {
+    text-decoration: none;
+  }
 </style>
 
 <div class="console__item">
-  <img src="PS.png" alt="Item Imagen" />
-  <h1>Play Station 4</h1>
-  <h2>$1000 USD</h2>
-  <p>Play Station 4 description and features</p>
-  <div class="item__provider">
-    <p>Amazon</p>
-  </div>
+  <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
+    <img src="PS.png" alt="Item Imagen" />
+    <h1>Play Station 4</h1>
+    <h2>$1000 USD</h2>
+    <p>Play Station 4 description and features</p>
+    <div class="item__provider">
+      <p>Amazon</p>
+    </div>
+  </a>
 </div>
