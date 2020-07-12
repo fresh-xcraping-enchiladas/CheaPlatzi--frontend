@@ -9,7 +9,9 @@ Object {
       "bound": Object {},
       "callbacks": Object {},
       "context": Map {},
-      "ctx": Array [],
+      "ctx": Array [
+        undefined,
+      ],
       "dirty": Array [
         -1,
       ],
@@ -27,9 +29,14 @@ Object {
         [Function],
       ],
       "on_mount": Array [],
-      "props": Object {},
+      "props": Object {
+        "segment": 0,
+      },
       "update": [Function],
     },
+    "$capture_state": [Function],
+    "$inject_state": [Function],
+    "$set": [Function],
   },
   "container": <body>
     <div>
@@ -57,13 +64,13 @@ Object {
               class="footer__links--title"
             >
               <p>
-                Company
+                Gamecheap
               </p>
             </li>
              
             <li>
               <a
-                href="."
+                href="/"
               >
                 Home
               </a>
@@ -71,7 +78,7 @@ Object {
              
             <li>
               <a
-                href="."
+                href="about"
               >
                 About
               </a>
@@ -79,7 +86,7 @@ Object {
              
             <li>
               <a
-                href="."
+                href="blog"
               >
                 Blog
               </a>
@@ -99,9 +106,10 @@ Object {
              
             <li>
               <a
-                href="."
+                href="https://www.notion.so/CheaPlatzi-s-Engineering-Wiki-3f897bf0888d40ffb7388e7f001ad133"
+                target="_blank"
               >
-                Info
+                Docs
               </a>
             </li>
              
@@ -109,7 +117,7 @@ Object {
               <a
                 href="."
               >
-                Info
+                Brand
               </a>
             </li>
              
@@ -117,7 +125,7 @@ Object {
               <a
                 href="."
               >
-                Info
+                The Team
               </a>
             </li>
           </ul>
@@ -130,16 +138,21 @@ Object {
             class="footer__copyright"
           >
             <p>
-              Copyright 2020 Gamecheap. All rights reserved.
+              Copyright © 2020 Gamecheap. All rights reserved.
             </p>
           </span>
            
           <ul
             class="footer__social"
           >
-            <i
-              class="github"
-            />
+            <a
+              href="https://github.com/fresh-xcraping-enchiladas"
+              target="_blank"
+            >
+              <i
+                class="fab fa-github"
+              />
+            </a>
              
             <a
               href="."

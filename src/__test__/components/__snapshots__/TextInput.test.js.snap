@@ -10,7 +10,7 @@ Object {
       "callbacks": Object {},
       "context": Map {},
       "ctx": Array [
-        "Search",
+        "Find your favorite console",
       ],
       "dirty": Array [
         -1,
@@ -41,12 +41,12 @@ Object {
   "container": <body>
     <div>
       <div
-        class="input"
+        class="container-input"
       >
         <input
           id=""
           name="input"
-          placeholder="Search"
+          placeholder="Find your favorite console"
           type="text"
         />
       </div>

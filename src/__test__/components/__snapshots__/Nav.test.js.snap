@@ -42,32 +42,49 @@ Object {
   },
   "container": <body>
     <div>
-      <nav
-        class="header"
-      >
-        <li>
+      <nav>
+        <input
+          id="res-menu"
+          type="checkbox"
+        />
+         
+        <label
+          for="res-menu"
+        >
+          <i
+            class="fa fa-bars"
+            id="sign-one"
+          />
+           
+          <i
+            class="fa fa-times"
+            id="sign-two"
+          />
+        </label>
+         
+        <div
+          class="logo"
+        >
           <a
             aria-current="page"
-            href="."
+            href="/"
           >
-            <figure>
-              <img
-                alt="Gamecheap Logo"
-                src="../gamecheap-logo.png"
-              />
-               
-              <h1>
-                Gamecheap
-              </h1>
-            </figure>
+            <img
+              alt="Gamecheap Logo"
+              src="../gamecheap-logo.png"
+            />
           </a>
-        </li>
+           
+          <h1>
+            Gamecheap
+          </h1>
+        </div>
          
         <ul>
           <li>
             <a
               aria-current="page"
-              href="."
+              href="/"
             >
               Home
             </a>
@@ -117,13 +134,9 @@ Object {
           </li>
            
           <li>
-            <div
-              class="header-country"
-            >
-              <h1>
-                MEX 🇲🇽
-              </h1>
-            </div>
+            <p>
+              MEX 🇲🇽
+            </p>
           </li>
         </ul>
       </nav>

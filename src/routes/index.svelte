@@ -73,9 +73,9 @@
 
     <Category>
       <Carousel>
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
+        <ConsoleItem id_type_product={1} />
+        <ConsoleItem id_type_product={2} />
+        <ConsoleItem id_type_product={3} />
         <ConsoleItem />
         <ConsoleItem />
         <ConsoleItem />
