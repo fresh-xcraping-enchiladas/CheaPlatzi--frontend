@@ -9,7 +9,16 @@ Object {
       "bound": Object {},
       "callbacks": Object {},
       "context": Map {},
-      "ctx": Array [],
+      "ctx": Array [
+        "MercadoLibre",
+        "nintendo",
+        undefined,
+        "PlayStation 4",
+        1000,
+        "PlayStation 4 description and features",
+        1,
+        1,
+      ],
       "dirty": Array [
         -1,
       ],
@@ -27,37 +36,57 @@ Object {
         [Function],
       ],
       "on_mount": Array [],
-      "props": Object {},
+      "props": Object {
+        "commerce": 0,
+        "description": 5,
+        "id_ecommerce": 7,
+        "id_type_product": 6,
+        "name": 3,
+        "price": 4,
+        "product_type": 1,
+        "segment": 2,
+      },
       "update": [Function],
     },
+    "$capture_state": [Function],
+    "$inject_state": [Function],
+    "$set": [Function],
   },
   "container": <body>
     <div>
       <div
-        class="console__item"
+        class="console__item nintendo"
       >
-        <img
-          alt="Item Imagen"
-          src="PS.png"
-        />
-         
-        <h1>
-          Play Station 4
-        </h1>
-         
-        <h2>
-          $1000 USD
-        </h2>
-         
-        <p>
-          Play Station 4 description and features
-        </p>
+        <a
+          href="item"
+        >
+          <img
+            alt="Item Imagen"
+            src="PS.png"
+          />
+           
+          <h1>
+            PlayStation 4
+          </h1>
+           
+          <h2>
+            $
+            1000
+             USD
+          </h2>
+           
+          <p
+            class="description"
+          >
+            PlayStation 4 description and features
+          </p>
+        </a>
          
         <div
           class="item__provider"
         >
           <p>
-            Amazon
+            MercadoLibre
           </p>
         </div>
       </div>
