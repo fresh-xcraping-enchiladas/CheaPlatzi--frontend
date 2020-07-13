@@ -1,3 +1,15 @@
+<script>
+  import { onMount } from "svelte";
+
+  const API = "https://cheaplatzi.uc.r.appspot.com/api/product/11";
+  let data = [];
+
+  const fetchData = (async () => {
+    const response = await fetch(API);
+    return await response.json();
+  })();
+</script>
+
 <style>
   .console__item {
     width: auto;
@@ -58,17 +70,23 @@
   }
 </style>
 
-<div class="console__item">
-  <i class="far fa-heart" />
-  <img src="PS.png" alt="Item Imagen" />
-  <h1>Play Station 4</h1>
-  <div class="console__description">
-    <p>Play Station 4 Slim</p>
-    <p>1TB Console</p>
-    <div class="price__section">
-      <p class="item__price--desc">Starts at</p>
-      <p class="item__price">$1000 USD</p>
+{#await fetchData}
+  <p>...waiting</p>
+{:then data}
+  <div class="console__item">
+    <i class="far fa-heart" />
+    <img src="PS.png" alt="Item Imagen" />
+    <h1>{data.name}</h1>
+    <div class="console__description">
+      <p>{data.description}</p>
+      <p>1TB Console</p>
+      <div class="price__section">
+        <p class="item__price--desc">Starts at</p>
+        <p class="item__price">${data.price} USD</p>
+      </div>
+      <button>Best Option!</button>
     </div>
-    <button>Best Option!</button>
   </div>
-</div>
+{:catch error}
+  <p>An error occurred!</p>
+{/await}

@@ -8,43 +8,44 @@
   export let description = 'PlayStation 4 description and features';
   export let commerce = 'Amazon';
   export let id_type_product = 1;
-  export let product_type = 'playstation';
+  export let product_type = "playstation";
   export let id_ecommerce = 1;
+
   switch (id_type_product) {
     case 1:
-      product_type = 'nintendo'
+      product_type = "nintendo";
       break;
     case 2:
-      product_type = 'xbox'
+      product_type = "xbox";
       break;
     case 3:
-      product_type = 'playstation'
+      product_type = "playstation";
       break;
     default:
-      product_type = 'default'
+      product_type = "default";
       break;
   }
   switch (id_ecommerce) {
     case 1:
-      commerce = 'MercadoLibre'
+      commerce = "MercadoLibre";
       break;
     case 2:
-      commerce = 'ColombiaGamer'
+      commerce = "ColombiaGamer";
       break;
     case 3:
-      commerce = 'OLX'
+      commerce = "OLX";
       break;
     case 4:
-      commerce = 'GamePlanet'
+      commerce = "GamePlanet";
       break;
     case 5:
-      commerce = 'Sears'
+      commerce = "Sears";
       break;
     case 6:
-      commerce = 'MixUp'
+      commerce = "MixUp";
       break;
     default:
-      commerce = 'default'
+      commerce = "default";
       break;
   }
   if (id_ecommerce <= 3) {
@@ -143,7 +144,11 @@
   }
 </style>
 
+<<<<<<< HEAD
+<div class={`console__item ${product_type}`}>
+=======
 <div class={`console__item ${product_type}`} data-url={url} >
+>>>>>>> master
   <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
     <img src={image} alt="Item Imagen" />
     <h1>{name.substring(0, 15)}</h1>

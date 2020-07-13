@@ -23,11 +23,6 @@
     background-color: #7d5ba6;
     color: #643173;
   }
-  /* div {
-    font-weight: 700;
-    background-color: #f9f9f9;
-    border-radius: 19px;
-  } */
 </style>
 
 {#if $currentUser}
