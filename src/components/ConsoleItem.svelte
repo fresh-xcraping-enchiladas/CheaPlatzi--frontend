@@ -47,6 +47,14 @@
       commerce = 'default'
       break;
   }
+  if (id_ecommerce <= 3) {
+    price = price / 3623.12
+    price = price.toFixed(2)
+  } else {
+    price = price / 100
+    price = price / 22.44
+    price = price.toFixed(2)
+  }
   description = cleanText(description)
 </script>
 
