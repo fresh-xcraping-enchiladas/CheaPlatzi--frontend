@@ -144,11 +144,7 @@
   }
 </style>
 
-<<<<<<< HEAD
-<div class={`console__item ${product_type}`}>
-=======
 <div class={`console__item ${product_type}`} data-url={url} >
->>>>>>> master
   <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
     <img src={image} alt="Item Imagen" />
     <h1>{name.substring(0, 15)}</h1>
