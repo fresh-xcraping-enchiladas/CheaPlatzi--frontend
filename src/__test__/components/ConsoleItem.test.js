@@ -2,8 +2,7 @@ import { render as stlRender } from '@testing-library/svelte';
 import '@testing-library/jest-dom/extend-expect';
 import ConsoleItem from '../../components/ConsoleItem.svelte';
 import playstationMock from './__mocks__/playstation_mock.json'
-import switchMock from './__mocks__/switch_mock.json'
-import xboxMock from './__mocks__/xbox_mock.json'
+import cleanText from '../../utils/cleanText';
 
 describe('<ConsoleItem /> Component', () => {  
   test('Check the UI of the ConsoleItem component', () => {
@@ -24,7 +23,7 @@ describe('<ConsoleItem /> Component', () => {
     expect(price).toHaveTextContent(playstationMock.price)
 
     const description = consoleItem.container.getElementsByClassName('description')[0]
-    expect(description.textContent).toEqual(playstationMock.description)
+    expect(description.textContent).toEqual(cleanText(playstationMock.description))
 
     const ecommerce = consoleItem.container
     .getElementsByClassName('item__provider')[0].children[0].textContent
@@ -32,5 +31,12 @@ describe('<ConsoleItem /> Component', () => {
 
     const classList = consoleItem.container.classList.contains('playstation')
     expect(classList).toBeTruthy
+  })
+
+  test('Check that cleanText() function works properly', () =>{
+    const descriptionUncleaned = "<div>Esta consola es reacondicionada. \n\n\n    </div>\n";
+    const descriptionCleaned = "Esta consola es reacondicionada.";
+    const text = cleanText(descriptionUncleaned)
+    expect(text).toEqual(descriptionCleaned)
   })
 })

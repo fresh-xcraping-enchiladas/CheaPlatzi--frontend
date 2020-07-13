@@ -125,14 +125,7 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -145,25 +138,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,6 +152,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,10 +176,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -218,19 +204,21 @@
 &nbsp;
 &nbsp;
 &nbsp;
-&lt;nav class="header"&gt;
-  &lt;li&gt;
-    &lt;a aria-current={segment === undefined ? 'page' : <span class="branch-1 cbranch-no" title="branch not covered" >undefined}</span> href="."&gt;
-      &lt;figure&gt;
-        &lt;img src="../gamecheap-logo.png" alt="Gamecheap Logo" /&gt;
-        &lt;h1&gt;Gamecheap&lt;/h1&gt;
-      &lt;/figure&gt;
+&lt;nav&gt;
+  &lt;input type="checkbox" id="res-menu" /&gt;
+  &lt;label for="res-menu"&gt;
+    &lt;i class="fa fa-bars" id="sign-one" /&gt;
+    &lt;i class="fa fa-times" id="sign-two" /&gt;
+  &lt;/label&gt;
+  &lt;div class="logo"&gt;
+    &lt;a aria-current={segment === undefined ? 'page' : <span class="branch-1 cbranch-no" title="branch not covered" >undefined}</span> href="/"&gt;
+      &lt;img src="../gamecheap-logo.png" alt="Gamecheap Logo" /&gt;
     &lt;/a&gt;
-  &lt;/li&gt;
-  
+    &lt;h1&gt;Gamecheap&lt;/h1&gt;
+  &lt;/div&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      &lt;a aria-current={segment === undefined ? 'page' : <span class="branch-1 cbranch-no" title="branch not covered" >undefined}</span> href="."&gt;
+      &lt;a aria-current={segment === undefined ? 'page' : <span class="branch-1 cbranch-no" title="branch not covered" >undefined}</span> href="/"&gt;
         Home
       &lt;/a&gt;
     &lt;/li&gt;
@@ -239,9 +227,6 @@
         About
       &lt;/a&gt;
     &lt;/li&gt;
-&nbsp;
-    &lt;!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen --&gt;
     &lt;li&gt;
       &lt;a
         rel="prefetch"
@@ -250,7 +235,6 @@
         Blog
       &lt;/a&gt;
     &lt;/li&gt;
-&nbsp;
     &lt;li&gt;
       &lt;a
         aria-current={segment === 'favorites' ? <span class="branch-0 cbranch-no" title="branch not covered" >'page' </span>: undefined}
@@ -258,13 +242,11 @@
         Favorites
       &lt;/a&gt;
     &lt;/li&gt;
-&nbsp;
     &lt;li&gt;
       &lt;a aria-current={segment === 'signup' ? <span class="branch-0 cbranch-no" title="branch not covered" >'page' </span>: undefined} href="signup"&gt;
         Sign Up
       &lt;/a&gt;
     &lt;/li&gt;
-&nbsp;
     &lt;li&gt;
       {#if !<span class="missing-if-branch" title="else path not taken" >E</span>$currentUser}
         &lt;a aria-current={segment === 'login' ? <span class="branch-0 cbranch-no" title="branch not covered" >'page' </span>: undefined} href="login"&gt;
@@ -274,11 +256,8 @@
         &lt;Login /&gt;
       {/if}
     &lt;/li&gt;
-&nbsp;
     &lt;li&gt;
-      &lt;div class="header-country"&gt;
-        &lt;h1&gt;MEX 🇲🇽&lt;/h1&gt;
-      &lt;/div&gt;
+      &lt;p&gt;MEX 🇲🇽&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
@@ -289,7 +268,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jul 10 2020 02:03:03 GMT-0500 (GMT-05:00)
+                at Sun Jul 12 2020 11:51:13 GMT-0500 (GMT-05:00)
             </div>
         </div>
         <script src="../prettify.js"></script>

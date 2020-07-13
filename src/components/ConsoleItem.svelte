@@ -1,5 +1,8 @@
 <script>
+  import cleanText from '../utils/cleanText';
   export let segment;
+  export let image = 'PS.png';
+  export let url = 'mock';
   export let name = 'PlayStation 4';
   export let price = 1000;
   export let description = 'PlayStation 4 description and features';
@@ -44,6 +47,7 @@
       commerce = 'default'
       break;
   }
+  description = cleanText(description)
 </script>
 
 <style>
@@ -131,12 +135,12 @@
   }
 </style>
 
-<div class={`console__item ${product_type}`} >
+<div class={`console__item ${product_type}`} data-url={url} >
   <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
-    <img src="PS.png" alt="Item Imagen" />
-    <h1>{name}</h1>
+    <img src={image} alt="Item Imagen" />
+    <h1>{name.substring(0, 15)}</h1>
     <h2>${price} USD</h2>
-    <p class="description">{description}</p>
+    <p class="description">{description.substring(0, 20)}</p>
   </a>
   <div class="item__provider">
     <p>{commerce}</p>

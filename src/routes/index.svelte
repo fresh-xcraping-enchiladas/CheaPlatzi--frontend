@@ -1,12 +1,28 @@
 <script>
+  import { onMount } from "svelte";
   import Category from "../components/Category.svelte";
   import Carousel from "../components/Carousel.svelte";
   import ConsoleItem from "../components/ConsoleItem.svelte";
   import Login from "../components/Login.svelte";
   import TextInput from "../components/TextInput.svelte";
   import CategoryContainer from "../components/CategoryContainer.svelte";
-
   import { currentUser } from "../stores/user";
+
+  const API = "https://cheaplatzi.uc.r.appspot.com/api/product";
+  let data = []
+  let nintendoProducts = [];
+  let playstationProducts = [];
+  let xboxProducts = [];
+  onMount(async () => {
+    const response = await fetch(API);
+    data = await response.json();
+    nintendoProducts = data.filter(item => item.id_type_product === 1)
+    nintendoProducts = nintendoProducts.slice(10, 20)
+    xboxProducts = data.filter(item => item.id_type_product === 2)
+    xboxProducts = xboxProducts.slice(10, 20)
+    playstationProducts = data.filter(item => item.id_type_product === 3)
+    playstationProducts = playstationProducts.slice(10, 20)
+  });
 </script>
 
 <style>
@@ -73,31 +89,53 @@
 
     <Category>
       <Carousel>
-        <ConsoleItem id_type_product={1} />
-        <ConsoleItem id_type_product={2} />
-        <ConsoleItem id_type_product={3} />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
+        {#each nintendoProducts as product}
+          <ConsoleItem 
+          image = {product.image}
+          url = {product.url}
+          name = {product.name}
+          price = {product.price}
+          description = {product.description}
+          commerce = {product.commerce}
+          id_type_product = {product.id_type_product}
+          product_type = {product.product_type}
+          id_ecommerce = {product.id_ecommerce}
+           />
+        {/each}
       </Carousel>
     </Category>
-
     <Category>
       <Carousel>
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
+        {#each playstationProducts as product}
+          <ConsoleItem 
+          image = {product.image}
+          url = {product.url}
+          name = {product.name}
+          price = {product.price}
+          description = {product.description}
+          commerce = {product.commerce}
+          id_type_product = {product.id_type_product}
+          product_type = {product.product_type}
+          id_ecommerce = {product.id_ecommerce}
+           />
+        {/each}
+      </Carousel>
+    </Category>
+    <Category>
+      <Carousel>
+        {#each xboxProducts as product}
+          <ConsoleItem 
+          image = {product.image}
+          url = {product.url}
+          name = {product.name}
+          price = {product.price}
+          description = {product.description}
+          commerce = {product.commerce}
+          id_type_product = {product.id_type_product}
+          product_type = {product.product_type}
+          id_ecommerce = {product.id_ecommerce}
+           />
+        {/each}
       </Carousel>
     </Category>
   </div>
