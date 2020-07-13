@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import Category from "../components/Category.svelte";
+  import Spinner from "../components/Spinner.svelte";
   import Carousel from "../components/Carousel.svelte";
   import ConsoleItem from "../components/ConsoleItem.svelte";
   import Login from "../components/Login.svelte";
@@ -125,53 +126,65 @@
 
     <Category>
       <Carousel>
-        {#each nintendoProducts as product}
-          <ConsoleItem 
-          image = {product.image}
-          url = {product.url}
-          name = {product.name}
-          price = {product.price}
-          description = {product.description}
-          commerce = {product.commerce}
-          id_type_product = {product.id_type_product}
-          product_type = {product.product_type}
-          id_ecommerce = {product.id_ecommerce}
-           />
-        {/each}
+        {#if nintendoProducts.length > 0}
+          {#each nintendoProducts as product}
+            <ConsoleItem 
+            image = {product.image}
+            url = {product.url}
+            name = {product.name}
+            price = {product.price}
+            description = {product.description}
+            commerce = {product.commerce}
+            id_type_product = {product.id_type_product}
+            product_type = {product.product_type}
+            id_ecommerce = {product.id_ecommerce}
+            />
+          {/each}
+        {:else}
+          <Spinner />
+        {/if}
       </Carousel>
     </Category>
     <Category>
       <Carousel>
+      {#if nintendoProducts.length > 0}
         {#each playstationProducts as product}
-          <ConsoleItem 
-          image = {product.image}
-          url = {product.url}
-          name = {product.name}
-          price = {product.price}
-          description = {product.description}
-          commerce = {product.commerce}
-          id_type_product = {product.id_type_product}
-          product_type = {product.product_type}
-          id_ecommerce = {product.id_ecommerce}
-           />
-        {/each}
+            <ConsoleItem 
+            image = {product.image}
+            url = {product.url}
+            name = {product.name}
+            price = {product.price}
+            description = {product.description}
+            commerce = {product.commerce}
+            id_type_product = {product.id_type_product}
+            product_type = {product.product_type}
+            id_ecommerce = {product.id_ecommerce}
+            />
+          {/each}
+        {:else}
+          <Spinner />
+        {/if}
       </Carousel>
     </Category>
     <Category>
       <Carousel>
+      {#if nintendoProducts.length > 0}
         {#each xboxProducts as product}
-          <ConsoleItem 
-          image = {product.image}
-          url = {product.url}
-          name = {product.name}
-          price = {product.price}
-          description = {product.description}
-          commerce = {product.commerce}
-          id_type_product = {product.id_type_product}
-          product_type = {product.product_type}
-          id_ecommerce = {product.id_ecommerce}
-           />
-        {/each}
+            <ConsoleItem 
+            image = {product.image}
+            url = {product.url}
+            name = {product.name}
+            price = {product.price}
+            description = {product.description}
+            commerce = {product.commerce}
+            id_type_product = {product.id_type_product}
+            product_type = {product.product_type}
+            id_ecommerce = {product.id_ecommerce}
+            />
+          {/each}
+      {:else}
+        <Spinner />
+      {/if}
       </Carousel>
     </Category>
   </div>
