@@ -1,5 +1,6 @@
 import { tick } from 'svelte';
 import swal from 'sweetalert';
+import firebase from 'firebase/app';
 
 export const signUp = () => {
 

@@ -1,8 +1,7 @@
+import { render as stlRender } from '@testing-library/svelte';
+import '@testing-library/jest-dom/extend-expect';
 import { signUp } from '../../utils/firebase';
-import firebase from 'firebase';
-import app from '../../utils/app';
-
-// app();
+import Login from '../../components/Login.svelte';
 
 jest.mock('firebase', () => {
     return {
@@ -44,26 +43,12 @@ jest.mock('firebase', () => {
     };
 });
 
-it('should dispatch sign up action', async () => {
+test('should dispatch sign up action', async () => {
+    const signup = stlRender(Login)
+
+    const emailSign = signup.container.getElementById('#emailSign')
+
     await signUp();
-    const usrEmailSign = '';
 
     expect(signUp).toHaveBeenCalled();
 });
-
-// describe('Test user Sign Up process', () => {
-
-//     test('Sign Up Function', () => {
-//         firebase.auth().createUserWithEmailAndPassword('user@domain.com', '123456')
-//             .then((user = firebase.auth.UserCredential) => {
-//                 firebase.auth().signInWithEmailAndPassword('user@domain.com', '123456')
-//                     .then((signedInUser = firebase.auth.UserCredential) => {
-//                         const userInfo = signedInUser.user;
-//                         if (userInfo != null) {
-//                             expect(userInfo.email).toEqual('user@domain.com');
-//                         }
-//                     })
-//             })
-//     }
-//     )
-// })

@@ -56,49 +56,41 @@
   <title>Gamecheap | Find your favorite console or videogames</title>
 </svelte:head>
 
-<div class="page-index">
-  {#if $currentUser}
-    <h2>
-      Welcome back
-      <strong>{$currentUser.displayName}!</strong>
-    </h2>
-  {:else}
-    <div class="container__hero">
-      <h2>Explore the best videogames and consoles in your city.</h2>
-      <TextInput placeholder="Find your favorite console or videogames" />
-    </div>
-  {/if}
-  <div class="container">
-    <CategoryContainer />
+<div class="container__hero">
+  <h2>Explore the best videogames and consoles in your city.</h2>
+  <TextInput placeholder="Find your favorite console or videogames" />
+</div>
 
-    <Category>
-      <Carousel>
-        <ConsoleItem id_type_product={1} />
-        <ConsoleItem id_type_product={2} />
-        <ConsoleItem id_type_product={3} />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-      </Carousel>
-    </Category>
+<div class="container">
+  <CategoryContainer />
 
-    <Category>
-      <Carousel>
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-        <ConsoleItem />
-      </Carousel>
-    </Category>
-  </div>
+  <Category>
+    <Carousel>
+      <ConsoleItem id_type_product={1} />
+      <ConsoleItem id_type_product={2} />
+      <ConsoleItem id_type_product={3} />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+    </Carousel>
+  </Category>
+
+  <Category>
+    <Carousel>
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+      <ConsoleItem />
+    </Carousel>
+  </Category>
 </div>
