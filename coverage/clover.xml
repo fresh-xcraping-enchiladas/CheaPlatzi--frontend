@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1594572673778" clover="3.2.0">
+  <project timestamp="1594572673778" name="All files">
+    <metrics statements="82" coveredstatements="51" conditionals="99" coveredconditionals="28" methods="9" coveredmethods="0" elements="190" coveredelements="79" complexity="0" loc="82" ncloc="82" packages="3" files="9" classes="9"/>
+    <package name="components">
+      <metrics statements="56" coveredstatements="46" conditionals="95" coveredconditionals="28" methods="0" coveredmethods="0"/>
+      <file name="Button.svelte" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/components/Button.svelte">
+        <metrics statements="2" coveredstatements="2" conditionals="3" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="2" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="3" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="CategoryItem.svelte" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/components/CategoryItem.svelte">
+        <metrics statements="5" coveredstatements="5" conditionals="17" coveredconditionals="6" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="0" falsecount="2"/>
+        <line num="8" count="1" type="cond" truecount="2" falsecount="3"/>
+        <line num="12" count="1" type="cond" truecount="2" falsecount="3"/>
+        <line num="16" count="1" type="cond" truecount="2" falsecount="3"/>
+      </file>
+      <file name="ConsoleItem.svelte" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/components/ConsoleItem.svelte">
+        <metrics statements="25" coveredstatements="18" conditionals="21" coveredconditionals="9" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="51" count="2" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="2" type="cond" truecount="2" falsecount="2"/>
+        <line num="54" count="2" type="cond" truecount="0" falsecount="2"/>
+        <line num="55" count="2" type="cond" truecount="0" falsecount="2"/>
+        <line num="56" count="2" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="2" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="Footer.svelte" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/components/Footer.svelte">
+        <metrics statements="4" coveredstatements="4" conditionals="12" coveredconditionals="3" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="3"/>
+        <line num="25" count="2" type="cond" truecount="1" falsecount="3"/>
+        <line num="30" count="2" type="cond" truecount="1" falsecount="3"/>
+      </file>
+      <file name="Login.svelte" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/components/Login.svelte">
+        <metrics statements="6" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+      </file>
+      <file name="Nav.svelte" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/components/Nav.svelte">
+        <metrics statements="13" coveredstatements="13" conditionals="37" coveredconditionals="8" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="1" falsecount="4"/>
+        <line num="26" count="2" type="cond" truecount="1" falsecount="4"/>
+        <line num="31" count="2" type="cond" truecount="1" falsecount="4"/>
+        <line num="38" count="2" type="cond" truecount="1" falsecount="4"/>
+        <line num="45" count="2" type="cond" truecount="1" falsecount="4"/>
+        <line num="51" count="2" type="cond" truecount="1" falsecount="4"/>
+        <line num="56" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="57" count="2" type="cond" truecount="1" falsecount="4"/>
+      </file>
+      <file name="TextInput.svelte" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/components/TextInput.svelte">
+        <metrics statements="1" coveredstatements="1" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
+      </file>
+    </package>
+    <package name="stores">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="user.js" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/stores/user.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="25" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="0"/>
+      <file name="firebase.js" path="/Users/wisord/Documents/Platzi/Platzi-Master/CheaPlatzi/Frontend/src/utils/firebase.js">
+        <metrics statements="25" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="62" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

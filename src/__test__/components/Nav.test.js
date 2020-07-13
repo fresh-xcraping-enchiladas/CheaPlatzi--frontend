@@ -9,4 +9,10 @@ describe('<Nav /> Component', () => {
 
     expect(container).toContainHTML("li")
   })
+
+  test('Check the UI of the Nav component', () => {
+    const nav = stlRender(Nav)
+  
+    expect(nav).toMatchSnapshot()
+  })
 })
