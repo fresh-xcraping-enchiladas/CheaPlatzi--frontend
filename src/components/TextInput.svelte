@@ -1,5 +1,7 @@
 <script>
+  import Button from './Button.svelte'
   export let placeholder = "Find your favorite console";
+  export let handleInput;
 </script>
 
 <style>
@@ -32,5 +34,5 @@
 </style>
 
 <div class="container-input">
-  <input type="text" name="input" {placeholder} id="" />
+    <input on:keypress={handleInput} type="text" name="input" {placeholder} id="" />
 </div>
