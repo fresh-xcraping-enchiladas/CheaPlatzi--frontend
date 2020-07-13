@@ -1,22 +1,22 @@
 <script>
-  export let text = 'Click Me'
+  export let text = "Click Me";
 </script>
 
 <style>
-  button{
+  button {
     height: 100%;
-    padding: 0 20px;
-    color: white;
-    font-size: inherit;
+    padding: 5px 15px;
+    color: var(--lightpurple-text);
+    font-size: 18px;
     border: none;
-    border-radius: 20px;
+    cursor: pointer;
+    border-radius: 12px;
     background-color: #643173;
   }
-  button:hover{
-    background-color: #7D5BA6;
+  button:hover {
+    background-color: #7d5ba6;
+    color: #643173;
   }
 </style>
 
-<button>
-  {text}
-</button>
+<button>{text}</button>

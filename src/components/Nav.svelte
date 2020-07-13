@@ -1,51 +1,169 @@
 <script>
- import Button from './Button.svelte'
+  import Login from "../components/Login.svelte";
+  import Button from "./Button.svelte";
+  import { signOut } from "../utils/firebase";
+  import { currentUser } from "../stores/user";
+
+  export let segment;
 </script>
 
 <style>
-  .header{
-    height: 50px;
+  nav {
+    border-bottom: 1px solid rgba(255, 62, 0, 0.1);
+    height: 60px;
     padding: 0 50px;
     display: flex;
-    font-size: 18px;
     justify-content: space-between;
     align-items: center;
-    background-color: #0C4F83;
-    color: #FFF;
+    background-color: var(--primary-blue);
+    color: var(--primary-white);
   }
-  .header-right{
-    height: 100%;
+
+  nav .logo {
     display: flex;
     align-items: center;
   }
-  .header-country{
-    padding-left: 20px;
+
+  nav .logo a img {
+    height: 60px;
   }
-  h1 {
-    margin: 0;
+
+  nav .logo h1 {
     font-size: 18px;
+    margin: 0;
   }
-  @media screen and (min-width: 750px) {
-    .header-right, h1 {
-      font-size: 24px;
-    }
+
+  nav ul {
+    float: right;
+    margin-right: 15px;
+    list-style: none;
   }
-  @media screen and (min-width: 900px) {
-    h1 {
-      font-size: 32px;
+
+  nav ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    position: relative;
+    padding: 5px 0;
+    color: var(--primary-white);
+    font-size: 18px;
+    text-decoration: none;
+  }
+  nav ul li p {
+    position: relative;
+    padding: 5px 0;
+    color: var(--primary-white);
+    font-size: 18px;
+    margin: 0;
+  }
+
+  label #sign-one,
+  label #sign-two {
+    font-size: 30px;
+    color: #fff;
+    line-height: 50px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+  }
+
+  #res-menu {
+    display: none;
+  }
+
+  @media (max-width: 870px) {
+    label #sign-one {
+      display: block;
     }
-    .header-right, .header-country h1{
-      font-size: 24px;
+
+    nav ul {
+      position: fixed;
+      width: 80%;
+      top: 60px;
+      left: -100%;
+      text-align: center;
+      transition: 0.5s;
+      z-index: 10;
+      background-color: var(--primary-blue);
+    }
+
+    nav ul li {
+      display: block;
+      margin: 40px 0;
+      line-height: 30px;
+    }
+
+    nav ul li a,
+    nav ul li p {
+      font-size: 20px;
+    }
+
+    #res-menu:checked ~ ul {
+      left: 0;
+    }
+    #res-menu:checked ~ label #sign-one {
+      display: none;
     }
   }
 </style>
 
-<nav class="header">
-  <h1>HunterPrice</h1>
-    <div class="header-right">
-      <Button text="Log In" />
-      <div class="header-country">
-        <h1>MEX 🇲🇽</h1>
-      </div>
-    </div>
+<nav>
+  <input type="checkbox" id="res-menu" />
+  <label for="res-menu">
+    <i class="fa fa-bars" id="sign-one" />
+    <i class="fa fa-times" id="sign-two" />
+  </label>
+  <div class="logo">
+    <a aria-current={segment === undefined ? 'page' : undefined} href="/">
+      <img src="../gamecheap-logo.png" alt="Gamecheap Logo" />
+    </a>
+    <h1>Gamecheap</h1>
+  </div>
+  <ul>
+    <li>
+      <a aria-current={segment === undefined ? 'page' : undefined} href="/">
+        Home
+      </a>
+    </li>
+    <li>
+      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
+        About
+      </a>
+    </li>
+    <li>
+      <a
+        rel="prefetch"
+        aria-current={segment === 'blog' ? 'page' : undefined}
+        href="blog">
+        Blog
+      </a>
+    </li>
+    <li>
+      <a
+        aria-current={segment === 'favorites' ? 'page' : undefined}
+        href="favorites">
+        Favorites
+      </a>
+    </li>
+    <li>
+      <a aria-current={segment === 'signup' ? 'page' : undefined} href="signup">
+        Sign Up
+      </a>
+    </li>
+    <li>
+      {#if !$currentUser}
+        <a aria-current={segment === 'login' ? 'page' : undefined} href="login">
+          <Button text="Log in" />
+        </a>
+      {:else}
+        <Login />
+      {/if}
+    </li>
+    <li>
+      <p>MEX 🇲🇽</p>
+    </li>
+  </ul>
 </nav>

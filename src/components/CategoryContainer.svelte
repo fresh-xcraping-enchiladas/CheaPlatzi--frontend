@@ -1,10 +1,6 @@
 <script>
-  import CategoryItem from '../components/CategoryItem.svelte'
+  import CategoryItem from "../components/CategoryItem.svelte";
 </script>
-
-<style>
-
-</style>
 
 <div class="category-container">
   <CategoryItem category="nintendo" />
