@@ -1,3 +1,6 @@
+<script>
+  export let text = 'Last searched'
+</script>
 <style>
   .category {
     margin: 0.2em;
@@ -9,6 +12,6 @@
 </style>
 
 <div class="category">
-  <h2 class="category__title">Last searched</h2>
+  <h2 class="category__title">{text}</h2>
   <slot />
 </div>

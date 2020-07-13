@@ -1,11 +1,12 @@
 <script>
-  import { onMount } from "svelte";
-
+  import cleanText from '../utils/cleanText';
   export let segment;
-  export let name = "Playstation";
-  export let price = "1000";
-  export let description = "PlayStation 4 description and features";
-  export let commerce = "Amazon";
+  export let image = 'PS.png';
+  export let url = 'mock';
+  export let name = 'PlayStation 4';
+  export let price = 1000;
+  export let description = 'PlayStation 4 description and features';
+  export let commerce = 'Amazon';
   export let id_type_product = 1;
   export let product_type = "playstation";
   export let id_ecommerce = 1;
@@ -47,6 +48,15 @@
       commerce = "default";
       break;
   }
+  if (id_ecommerce <= 3) {
+    price = price / 3623.12
+    price = price.toFixed(2)
+  } else {
+    price = price / 100
+    price = price / 22.44
+    price = price.toFixed(2)
+  }
+  description = cleanText(description)
 </script>
 
 <style>
@@ -134,12 +144,16 @@
   }
 </style>
 
+<<<<<<< HEAD
 <div class={`console__item ${product_type}`}>
+=======
+<div class={`console__item ${product_type}`} data-url={url} >
+>>>>>>> master
   <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
-    <img src="PS.png" alt="Item Imagen" />
-    <h1>{name}</h1>
+    <img src={image} alt="Item Imagen" />
+    <h1>{name.substring(0, 15)}</h1>
     <h2>${price} USD</h2>
-    <p class="description">{description}</p>
+    <p class="description">{description.substring(0, 20)}</p>
   </a>
   <div class="item__provider">
     <p>{commerce}</p>
