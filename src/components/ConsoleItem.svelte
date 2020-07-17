@@ -3,6 +3,7 @@
   export let segment;
   export let image = 'PS.png';
   export let url = 'mock';
+  export let id = 1;
   export let name = 'PlayStation 4';
   export let price = 1000;
   export let description = 'PlayStation 4 description and features';
@@ -48,21 +49,27 @@
       commerce = "default";
       break;
   }
-  if (id_ecommerce <= 3) {
-    price = price / 3623.12
-    price = price.toFixed(2)
-  } else {
-    price = price / 100
-    price = price / 22.44
-    price = price.toFixed(2)
-  }
+  price = parseFloat(price)
+  console.log(price)
+  price = new Intl.NumberFormat("en-US", {style: "currency", currency: "MXN"}).format(price)
+  console.log(price)
+  // if (id_ecommerce <= 3) {
+  //   price = price / 3623.12
+  //   price = price.toFixed(2)
+  // } else {
+  //   if (price >= 100000) {
+  //     price = price / 100
+  //   }
+  //   price = price / 22.44
+  //   price = price.toFixed(2)
+  // }
   description = cleanText(description)
 </script>
 
 <style>
   .console__item {
     width: 200px;
-    max-height: 350px;
+    max-height: 450px;
     text-align: center;
     margin-right: 1.3rem;
     line-height: 1.2rem;
@@ -145,10 +152,14 @@
 </style>
 
 <div class={`console__item ${product_type}`} data-url={url} >
-  <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
+  <a aria-current={segment === 'item' ? 'page' : undefined} href={`item/${id}`}>
     <img src={image} alt="Item Imagen" />
     <h1>{name.substring(0, 15)}</h1>
-    <h2>${price} USD</h2>
+    {#if id_ecommerce > 3}
+      <h2>{price}</h2>
+      {:else}
+      <h2>{price}</h2>
+    {/if}
     <p class="description">{description.substring(0, 20)}</p>
   </a>
   <div class="item__provider">

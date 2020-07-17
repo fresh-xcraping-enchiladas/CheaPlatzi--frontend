@@ -9,7 +9,7 @@
   import CategoryContainer from "../components/CategoryContainer.svelte";
   import { currentUser } from "../stores/user";
 
-  const API = "https://cheaplatzi.uc.r.appspot.com/api/product";
+  const API = "https://cheaplatzi.uc.r.appspot.com/api/product?id_ecommerce=4";
   let data = [];
   let nintendoProducts = [];
   let playstationProducts = [];
@@ -107,6 +107,7 @@
       <Carousel>
         {#each searchedItems as item}
           <ConsoleItem
+            id={item.id}
             image={item.image}
             url={item.url}
             name={item.name}
@@ -129,6 +130,7 @@
         {#if nintendoProducts.length > 0}
           {#each nintendoProducts as product}
             <ConsoleItem
+              id={product.id}
               image={product.image}
               url={product.url}
               name={product.name}
@@ -149,6 +151,7 @@
         {#if nintendoProducts.length > 0}
           {#each playstationProducts as product}
             <ConsoleItem
+              id={product.id}
               image={product.image}
               url={product.url}
               name={product.name}
@@ -169,6 +172,7 @@
         {#if nintendoProducts.length > 0}
           {#each xboxProducts as product}
             <ConsoleItem
+              id={product.id}
               image={product.image}
               url={product.url}
               name={product.name}

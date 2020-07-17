@@ -70,14 +70,14 @@
 <div class={`category-item ${category}`}>
   {#if category === 'nintendo' || category === 'Nintendo'}
     <p>Nintendo</p>
-    <img src="nintendo-logo.png" alt="" />
+    <img src="nintendo-switch.png" alt="" />
   {/if}
   {#if category === 'playstation' || category === 'Playstation'}
     <p>PlayStation</p>
-    <img src="playstation.png" alt="" />
+    <img src="sony.png" alt="" />
   {/if}
   {#if category === 'xbox' || category === 'Xbox'}
     <p>Xbox</p>
-    <img src="xbox.png" alt="" />
+    <img src="xbox_1.png" alt="" />
   {/if}
 </div>

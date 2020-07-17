@@ -2,12 +2,7 @@
   import { onMount } from "svelte";
 
   const API = "https://cheaplatzi.uc.r.appspot.com/api/product/11";
-  let data = [];
-
-  const fetchData = (async () => {
-    const response = await fetch(API);
-    return await response.json();
-  })();
+  export let data = {}
 </script>
 
 <style>
@@ -41,9 +36,12 @@
   }
   h1 {
     font-size: var(--item-title);
+    max-width: 90%;
+    margin: 10px auto;
   }
   p {
     font-size: var(--item-description);
+    max-width: 80%;
     margin: 0;
   }
   i {
@@ -53,7 +51,6 @@
     font-size: 24px;
   }
   img {
-    width: 325px;
     height: 250px;
     margin: 0.5em;
   }
@@ -70,23 +67,18 @@
   }
 </style>
 
-{#await fetchData}
-  <p>...waiting</p>
-{:then data}
   <div class="console__item">
     <i class="far fa-heart" />
-    <img src="PS.png" alt="Item Imagen" />
+    <img src={data.image} alt="Item Imagen" />
     <h1>{data.name}</h1>
     <div class="console__description">
       <p>{data.description}</p>
       <p>1TB Console</p>
       <div class="price__section">
         <p class="item__price--desc">Starts at</p>
-        <p class="item__price">${data.price} USD</p>
+        <p class="item__price">${data.price} COL</p>
       </div>
       <button>Best Option!</button>
+      <a href={data.url}>URL</a>
     </div>
   </div>
-{:catch error}
-  <p>An error occurred!</p>
-{/await}
