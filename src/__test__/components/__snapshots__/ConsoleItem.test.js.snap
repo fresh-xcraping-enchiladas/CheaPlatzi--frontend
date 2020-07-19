@@ -10,14 +10,15 @@ Object {
       "callbacks": Object {},
       "context": Map {},
       "ctx": Array [
+        "MX$1,000.00",
         "PlayStation 4 description and features",
         "MercadoLibre",
         "nintendo",
         undefined,
+        "PS.png",
+        "mock",
+        1,
         "PlayStation 4",
-        1000,
-        undefined,
-        undefined,
         1,
         1,
       ],
@@ -39,16 +40,17 @@ Object {
       ],
       "on_mount": Array [],
       "props": Object {
-        "commerce": 1,
-        "description": 0,
+        "commerce": 2,
+        "description": 1,
+        "id": 7,
         "id_ecommerce": 9,
-        "id_type_product": 8,
-        "image": 6,
-        "name": 4,
-        "price": 5,
-        "product_type": 2,
-        "segment": 3,
-        "url": 7,
+        "id_type_product": 10,
+        "image": 5,
+        "name": 8,
+        "price": 0,
+        "product_type": 3,
+        "segment": 4,
+        "url": 6,
       },
       "update": [Function],
     },
@@ -60,9 +62,10 @@ Object {
     <div>
       <div
         class="console__item nintendo"
+        data-url="mock"
       >
         <a
-          href="item"
+          href="item/1"
         >
           <img
             alt="Item Imagen"
@@ -74,15 +77,13 @@ Object {
           </h1>
            
           <h2>
-            $
-            1000
-             USD
+            MX$1,000.00
           </h2>
            
           <p
             class="description"
           >
-            PlayStation 4 description and features
+            PlayStation 4 description and featu
           </p>
         </a>
          

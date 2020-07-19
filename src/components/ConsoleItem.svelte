@@ -50,19 +50,7 @@
       break;
   }
   price = parseFloat(price)
-  console.log(price)
   price = new Intl.NumberFormat("en-US", {style: "currency", currency: "MXN"}).format(price)
-  console.log(price)
-  // if (id_ecommerce <= 3) {
-  //   price = price / 3623.12
-  //   price = price.toFixed(2)
-  // } else {
-  //   if (price >= 100000) {
-  //     price = price / 100
-  //   }
-  //   price = price / 22.44
-  //   price = price.toFixed(2)
-  // }
   description = cleanText(description)
 </script>
 
@@ -154,13 +142,13 @@
 <div class={`console__item ${product_type}`} data-url={url} >
   <a aria-current={segment === 'item' ? 'page' : undefined} href={`item/${id}`}>
     <img src={image} alt="Item Imagen" />
-    <h1>{name.substring(0, 15)}</h1>
+    <h1>{name.substring(0, 20)}</h1>
     {#if id_ecommerce > 3}
       <h2>{price}</h2>
       {:else}
       <h2>{price}</h2>
     {/if}
-    <p class="description">{description.substring(0, 20)}</p>
+    <p class="description">{description.substring(0, 35)}</p>
   </a>
   <div class="item__provider">
     <p>{commerce}</p>

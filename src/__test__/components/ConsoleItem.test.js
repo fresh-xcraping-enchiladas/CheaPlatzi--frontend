@@ -20,7 +20,12 @@ describe('<ConsoleItem /> Component', () => {
     expect(title).toHaveTextContent(playstationMock.name)
 
     const price = consoleItem.container.getElementsByTagName('h2')[0]
-    expect(price).toHaveTextContent(playstationMock.price)
+    const expectedPrice = new Intl.NumberFormat(
+      "en-US", 
+      {style: "currency", currency: "MXN"}
+    )
+    .format(playstationMock.price)
+    expect(price).toHaveTextContent(expectedPrice)
 
     const description = consoleItem.container.getElementsByClassName('description')[0]
     expect(description.textContent).toEqual(cleanText(playstationMock.description))
