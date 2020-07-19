@@ -20,7 +20,11 @@
     justify-content: center;
     padding: 6em;
   }
-
+  @media screen and (max-width: 700px){
+    .main-item__container{
+      padding: 10px;
+    }
+  }
   @media (max-width: 375px) {
     .main-item__container {
       width: auto;

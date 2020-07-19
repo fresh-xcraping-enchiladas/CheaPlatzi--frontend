@@ -1,5 +1,8 @@
 <script>
+  import { colombianFlag } from '../stores/user';
   export let data = {}
+  const colombianPrice = new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(data.price)
+  const mexicanPrice = new Intl.NumberFormat("es-MX", {style: "currency", currency: "MXN"}).format(data.price)
 </script>
 
 <style>
@@ -17,6 +20,10 @@
     text-align: left;
     padding: 1em 2em;
     line-height: 1.5rem;
+  }
+  .console_description_paragraph{
+    max-height: 200px;
+    overflow: scroll;
   }
   .price__section {
     display: flex;
@@ -69,10 +76,14 @@
     <img src={data.image} alt="Item Imagen" />
     <h1>{data.name}</h1>
     <div class="console__description">
-      <p>{data.description}</p>
+      <p class="console_description_paragraph">{data.description}</p>
       <div class="price__section">
         <p class="item__price--desc">Starts at</p>
-        <p class="item__price">${data.price} COL</p>
+        {#if $colombianFlag}
+          <p class="item__price">{colombianPrice} COL</p>
+        {:else}
+          <p class="item__price">{mexicanPrice} MXN</p>
+        {/if}
       </div>
       <button>Best Option!</button>
       <a href={data.url}>URL</a>

@@ -1,5 +1,6 @@
 <script>
   import cleanText from '../utils/cleanText';
+  import { colombianFlag } from '../stores/user'; 
   export let segment;
   export let image = 'PS.png';
   export let url = 'mock';
@@ -50,7 +51,8 @@
       break;
   }
   price = parseFloat(price)
-  price = new Intl.NumberFormat("en-US", {style: "currency", currency: "MXN"}).format(price)
+  const colombianPrice = new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(price)
+  const mexicanPrice = new Intl.NumberFormat("es-MX", {style: "currency", currency: "MXN"}).format(price)
   description = cleanText(description)
 </script>
 
@@ -143,10 +145,10 @@
   <a aria-current={segment === 'item' ? 'page' : undefined} href={`item/${id}`}>
     <img src={image} alt="Item Imagen" />
     <h1>{name.substring(0, 20)}</h1>
-    {#if id_ecommerce > 3}
-      <h2>{price}</h2>
+    {#if $colombianFlag}
+      <h2>COP {colombianPrice}</h2>
       {:else}
-      <h2>{price}</h2>
+      <h2>MXN {mexicanPrice}</h2>
     {/if}
     <p class="description">{description.substring(0, 35)}</p>
   </a>

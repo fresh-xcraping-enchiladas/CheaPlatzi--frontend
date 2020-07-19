@@ -71,7 +71,12 @@
     background-color: transparent;
     border: none;
   }
-  
+  nav ul li button {
+    color: var(--white);
+  }
+  nav ul li button:hover {
+    cursor: pointer;
+  }
   nav ul li [aria-current="page"]{
     color: var(--primary-white);
   }
@@ -199,11 +204,11 @@
     <li>
       {#if $colombianFlag}
         <button on:click={handleClick}>
-          MEX 🇲🇽
+          COL 🇨🇴
         </button>
       {:else}
         <button on:click={handleClick}>
-          COL 🇨🇴
+          MEX 🇲🇽
         </button>
       {/if}
     </li>
