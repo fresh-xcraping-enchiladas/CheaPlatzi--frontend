@@ -56,6 +56,14 @@
     display: flex;
     justify-content: center;
   }
+  .blog__text {
+    padding: 3em 7.5em;
+  }
+  @media (max-width: 420px) {
+    .blog__text {
+      padding: 3em 0.8em;
+    }
+  }
 </style>
 
 <svelte:head>
@@ -67,5 +75,7 @@
   <div class="blog__image">
     <img src={post.image} alt="" />
   </div>
-  {@html post.html}
+  <div class="blog__text">
+    {@html post.html}
+  </div>
 </div>
