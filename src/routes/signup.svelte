@@ -80,9 +80,11 @@
     h2 {
       font-size: 3.2em;
     }
-    input,
+    input {
+      width: 30%;
+    }
     button {
-      width: 50%;
+      width: 20%;
     }
   }
 </style>
