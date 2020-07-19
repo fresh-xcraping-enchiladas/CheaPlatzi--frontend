@@ -8,8 +8,9 @@
   import TextInput from "../components/TextInput.svelte";
   import CategoryContainer from "../components/CategoryContainer.svelte";
   import { currentUser } from "../stores/user";
+  import API_URL from "../config/config.js";
 
-  const API = "https://cheaplatzi.uc.r.appspot.com/api/product?id_ecommerce=4";
+  const API = `${API_URL.API_URL}product`;
   let data = [];
   let nintendoProducts = [];
   let playstationProducts = [];

@@ -1,6 +1,7 @@
 <script>
   import Login from "../components/Login.svelte";
   import Button from "./Button.svelte";
+  import { onMount } from "svelte";
   import { signOut } from "../utils/firebase";
   import { currentUser, colombianFlag } from "../stores/user";
   export let segment;
@@ -41,6 +42,12 @@
     margin-right: 15px;
     list-style: none;
   }
+  [aria-current] {
+    opacity: 100%;
+  }
+  [aria-current]::after {
+    opacity: 50%;
+  }
 
   nav ul li {
     display: inline-block;
@@ -55,6 +62,7 @@
     color: var(--lightpurple-title);
     font-size: 18px;
     text-decoration: none;
+    opacity: 70%;
     margin: 0;
     background-color: transparent;
     border: none;
@@ -127,12 +135,18 @@
   </div>
   <ul>
     <li>
-      <a aria-current={segment === undefined ? 'page' : undefined} href="/">
+      <a
+        class="current"
+        aria-current={segment === undefined ? 'page' : undefined}
+        href="/">
         Home
       </a>
     </li>
     <li>
-      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
+      <a
+        class="current"
+        aria-current={segment === 'about' ? 'page' : undefined}
+        href="about">
         About
       </a>
     </li>
@@ -153,12 +167,15 @@
     </li>
     <li>
       <a aria-current={segment === 'signup' ? 'page' : undefined} href="signup">
-        Sign Up
+        Sign up
       </a>
     </li>
     <li>
       {#if !$currentUser}
-        <a aria-current={segment === 'login' ? 'page' : undefined} href="login">
+        <a
+          class="current"
+          aria-current={segment === 'login' ? 'page' : undefined}
+          href="login">
           <Button text="Log in" />
         </a>
       {:else}
