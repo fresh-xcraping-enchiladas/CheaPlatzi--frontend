@@ -89,105 +89,97 @@
   <title>Gamecheap | Find your favorite console or videogames</title>
 </svelte:head>
 
-<div class="page-index">
-  {#if $currentUser}
-    <h2>
-      Welcome back
-      <strong>{$currentUser.displayName}!</strong>
-    </h2>
-  {:else}
-    <div class="container__hero">
-      <h2>Explore the best videogames and consoles in your city.</h2>
-      <TextInput
-        placeholder="Find your favorite console or videogames"
-        {handleInput} />
-    </div>
-  {/if}
-  {#if searchedItems.length > 0}
-    <Category text="Searched Items">
-      <Carousel>
-        {#each searchedItems as item}
+<div class="container__hero">
+  <h2>Explore the best videogames and consoles in your city.</h2>
+  <TextInput
+    placeholder="Find your favorite console or videogames"
+    {handleInput} />
+</div>
+
+{#if searchedItems.length > 0}
+  <Category text="Searched Items">
+    <Carousel>
+      {#each searchedItems as item}
+        <ConsoleItem
+          id={item.id}
+          image={item.image}
+          url={item.url}
+          name={item.name}
+          price={item.price}
+          description={item.description}
+          commerce={item.commerce}
+          id_type_product={item.id_type_product}
+          product_type={item.product_type}
+          id_ecommerce={item.id_ecommerce} />
+      {/each}
+    </Carousel>
+  </Category>
+{/if}
+
+<div class="container">
+  <CategoryContainer />
+
+  <Category>
+    <Carousel>
+      {#if nintendoProducts.length > 0}
+        {#each nintendoProducts as product}
           <ConsoleItem
-             id={item.id}
-            image={item.image}
-            url={item.url}
-            name={item.name}
-            price={item.price}
-            description={item.description}
-            commerce={item.commerce}
-            id_type_product={item.id_type_product}
-            product_type={item.product_type}
-            id_ecommerce={item.id_ecommerce} />
+            id={product.id}
+            image={product.image}
+            url={product.url}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+            commerce={product.commerce}
+            id_type_product={product.id_type_product}
+            product_type={product.product_type}
+            id_ecommerce={product.id_ecommerce} />
         {/each}
-      </Carousel>
-    </Category>
-  {/if}
-
-  <div class="container">
-    <CategoryContainer />
-
-    <Category>
-      <Carousel>
-        {#if nintendoProducts.length > 0}
-          {#each nintendoProducts as product}
-            <ConsoleItem
-              id={product.id}
-              image={product.image}
-              url={product.url}
-              name={product.name}
-              price={product.price}
-              description={product.description}
-              commerce={product.commerce}
-              id_type_product={product.id_type_product}
-              product_type={product.product_type}
-              id_ecommerce={product.id_ecommerce} />
-          {/each}
-        {:else}
-          <Spinner />
-        {/if}
-      </Carousel>
-    </Category>
-    <Category>
-      <Carousel>
-        {#if nintendoProducts.length > 0}
-          {#each playstationProducts as product}
-            <ConsoleItem
-              id={product.id}
-              image={product.image}
-              url={product.url}
-              name={product.name}
-              price={product.price}
-              description={product.description}
-              commerce={product.commerce}
-              id_type_product={product.id_type_product}
-              product_type={product.product_type}
-              id_ecommerce={product.id_ecommerce} />
-          {/each}
-        {:else}
-          <Spinner />
-        {/if}
-      </Carousel>
-    </Category>
-    <Category>
-      <Carousel>
-        {#if nintendoProducts.length > 0}
-          {#each xboxProducts as product}
-            <ConsoleItem
-              id={product.id}
-              image={product.image}
-              url={product.url}
-              name={product.name}
-              price={product.price}
-              description={product.description}
-              commerce={product.commerce}
-              id_type_product={product.id_type_product}
-              product_type={product.product_type}
-              id_ecommerce={product.id_ecommerce} />
-          {/each}
-        {:else}
-          <Spinner />
-        {/if}
-      </Carousel>
-    </Category>
-  </div>
+      {:else}
+        <Spinner />
+      {/if}
+    </Carousel>
+  </Category>
+  <Category>
+    <Carousel>
+      {#if nintendoProducts.length > 0}
+        {#each playstationProducts as product}
+          <ConsoleItem
+            id={product.id}
+            image={product.image}
+            url={product.url}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+            commerce={product.commerce}
+            id_type_product={product.id_type_product}
+            product_type={product.product_type}
+            id_ecommerce={product.id_ecommerce} />
+        {/each}
+      {:else}
+        <Spinner />
+      {/if}
+    </Carousel>
+  </Category>
+  <Category>
+    <Carousel>
+      {#if nintendoProducts.length > 0}
+        {#each xboxProducts as product}
+          <ConsoleItem
+            id={product.id}
+            image={product.image}
+            url={product.url}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+            commerce={product.commerce}
+            id_type_product={product.id_type_product}
+            product_type={product.product_type}
+            id_ecommerce={product.id_ecommerce} />
+        {/each}
+      {:else}
+        <Spinner />
+      {/if}
+    </Carousel>
+  </Category>
 </div>

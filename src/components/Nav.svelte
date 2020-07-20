@@ -7,8 +7,8 @@
 
   export let segment;
 
-  function handleClick () {
-    colombianFlag.update(colombianFlag => !colombianFlag)
+  function handleClick() {
+    colombianFlag.update(colombianFlag => !colombianFlag);
   }
 </script>
 
@@ -39,7 +39,7 @@
   }
 
   a {
-    text-decoration: none
+    text-decoration: none;
   }
 
   nav ul {
@@ -60,7 +60,7 @@
     margin: 0 15px;
   }
 
-  nav ul li a, 
+  nav ul li a,
   nav ul li button {
     position: relative;
     padding: 5px 0;
@@ -77,7 +77,7 @@
   nav ul li button:hover {
     cursor: pointer;
   }
-  nav ul li [aria-current="page"]{
+  nav ul li [aria-current="page"] {
     color: var(--primary-white);
   }
 
@@ -154,18 +154,12 @@
   </div>
   <ul>
     <li>
-      <a
-        class="current"
-        aria-current={segment === undefined ? 'page' : undefined}
-        href="/">
+      <a aria-current={segment === undefined ? 'page' : undefined} href="/">
         Home
       </a>
     </li>
     <li>
-      <a
-        class="current"
-        aria-current={segment === 'about' ? 'page' : undefined}
-        href="about">
+      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
         About
       </a>
     </li>
@@ -191,10 +185,7 @@
     </li>
     <li>
       {#if !$currentUser}
-        <a
-          class="current"
-          aria-current={segment === 'login' ? 'page' : undefined}
-          href="login">
+        <a aria-current={segment === 'login' ? 'page' : undefined} href="login">
           <Button text="Log in" />
         </a>
       {:else}
@@ -203,13 +194,9 @@
     </li>
     <li>
       {#if $colombianFlag}
-        <button on:click={handleClick}>
-          COL 🇨🇴
-        </button>
+        <button on:click={handleClick}>COL 🇨🇴</button>
       {:else}
-        <button on:click={handleClick}>
-          MEX 🇲🇽
-        </button>
+        <button on:click={handleClick}>MEX 🇲🇽</button>
       {/if}
     </li>
   </ul>
