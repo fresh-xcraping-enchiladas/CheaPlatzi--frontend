@@ -136,6 +136,9 @@
       display: none;
     }
   }
+  .hide {
+    display: none;
+  }
 </style>
 
 <nav>
@@ -178,11 +181,24 @@
         Favorites
       </a>
     </li>
-    <li>
-      <a aria-current={segment === 'signup' ? 'page' : undefined} href="signup">
-        Sign up
-      </a>
-    </li>
+    {#if $currentUser}
+      <li>
+        <a
+          class="hide"
+          aria-current={segment === 'signup' ? 'page' : undefined}
+          href="signup">
+          Sign up
+        </a>
+      </li>
+    {:else}
+      <li>
+        <a
+          aria-current={segment === 'signup' ? 'page' : undefined}
+          href="signup">
+          Sign up
+        </a>
+      </li>
+    {/if}
     <li>
       {#if !$currentUser}
         <a aria-current={segment === 'login' ? 'page' : undefined} href="login">
