@@ -12,6 +12,8 @@ Object {
       "ctx": Array [
         undefined,
         null,
+        true,
+        [Function],
       ],
       "dirty": Array [
         -1,
@@ -27,6 +29,7 @@ Object {
       },
       "not_equal": [Function],
       "on_destroy": Array [
+        [Function],
         [Function],
         [Function],
       ],
@@ -75,15 +78,21 @@ Object {
             />
           </a>
            
-          <h1>
-            Gamecheap
-          </h1>
+          <a
+            aria-current="page"
+            href="/"
+          >
+            <h1>
+              Gamecheap
+            </h1>
+          </a>
         </div>
          
         <ul>
           <li>
             <a
               aria-current="page"
+              class="current"
               href="/"
             >
               Home
@@ -92,6 +101,7 @@ Object {
            
           <li>
             <a
+              class="current"
               href="about"
             >
               About
@@ -119,12 +129,13 @@ Object {
             <a
               href="signup"
             >
-              Sign Up
+              Sign up
             </a>
           </li>
            
           <li>
             <a
+              class="current"
               href="login"
             >
               <button>
@@ -134,9 +145,9 @@ Object {
           </li>
            
           <li>
-            <p>
+            <button>
               MEX 🇲🇽
-            </p>
+            </button>
           </li>
         </ul>
       </nav>

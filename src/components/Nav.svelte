@@ -3,22 +3,13 @@
   import Button from "./Button.svelte";
   import { onMount } from "svelte";
   import { signOut } from "../utils/firebase";
-  import { currentUser } from "../stores/user";
+  import { currentUser, colombianFlag } from "../stores/user";
 
   export let segment;
 
-  // onMount(() => {
-  //   const ul = document.querySelector("ul");
-  //   const a = document.querySelectorAll("a");
-
-  //   a.forEach(elmt => {
-  //     elmt.addEventListener("click", () => {
-  //       ul.querySelector(".current").classList.remove(".current");
-
-  //       elmt.classList.add(".current");
-  //     });
-  //   });
-  // });
+  function handleClick () {
+    colombianFlag.update(colombianFlag => !colombianFlag)
+  }
 </script>
 
 <style>
@@ -47,6 +38,10 @@
     margin: 0;
   }
 
+  a {
+    text-decoration: none
+  }
+
   nav ul {
     float: right;
     margin-right: 15px;
@@ -65,20 +60,25 @@
     margin: 0 15px;
   }
 
-  nav ul li a {
+  nav ul li a, 
+  nav ul li button {
     position: relative;
     padding: 5px 0;
-    color: var(--primary-white);
+    color: var(--lightpurple-title);
     font-size: 18px;
     text-decoration: none;
-    opacity: 70%;
-  }
-  nav ul li p {
-    position: relative;
-    padding: 5px 0;
-    color: var(--primary-white);
-    font-size: 18px;
     margin: 0;
+    background-color: transparent;
+    border: none;
+  }
+  nav ul li button {
+    color: var(--white);
+  }
+  nav ul li button:hover {
+    cursor: pointer;
+  }
+  nav ul li [aria-current="page"]{
+    color: var(--primary-white);
   }
 
   label #sign-one,
@@ -118,8 +118,15 @@
     }
 
     nav ul li a,
-    nav ul li p {
-      font-size: 20px;
+    nav ul li button {
+      position: relative;
+      padding: 5px 0;
+      color: var(--lightpurple-title);
+      font-size: 18px;
+      text-decoration: none;
+      margin: 0;
+      background-color: transparent;
+      border: none;
     }
 
     #res-menu:checked ~ ul {
@@ -141,7 +148,9 @@
     <a aria-current={segment === undefined ? 'page' : undefined} href="/">
       <img src="../gamecheap-logo.png" alt="Gamecheap Logo" />
     </a>
-    <h1>Gamecheap</h1>
+    <a aria-current={segment === undefined ? 'page' : undefined} href="/">
+      <h1>Gamecheap</h1>
+    </a>
   </div>
   <ul>
     <li>
@@ -193,7 +202,15 @@
       {/if}
     </li>
     <li>
-      <p>MEX 🇲🇽</p>
+      {#if $colombianFlag}
+        <button on:click={handleClick}>
+          COL 🇨🇴
+        </button>
+      {:else}
+        <button on:click={handleClick}>
+          MEX 🇲🇽
+        </button>
+      {/if}
     </li>
   </ul>
 </nav>

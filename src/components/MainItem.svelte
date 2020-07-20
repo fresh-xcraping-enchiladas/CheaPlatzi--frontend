@@ -1,3 +1,10 @@
+<script>
+  import { colombianFlag } from '../stores/user';
+  export let data = {}
+  const colombianPrice = new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(data.price)
+  const mexicanPrice = new Intl.NumberFormat("es-MX", {style: "currency", currency: "MXN"}).format(data.price)
+</script>
+
 <style>
   .console__item {
     width: auto;
@@ -14,6 +21,10 @@
     padding: 1em 2em;
     line-height: 1.5rem;
   }
+  .console_description_paragraph{
+    max-height: 200px;
+    overflow: scroll;
+  }
   .price__section {
     display: flex;
     justify-content: space-between;
@@ -29,10 +40,13 @@
   }
   h1 {
     font-size: var(--item-title);
+    max-width: 90%;
+    margin: 10px auto;
   }
   p {
     font-size: var(--item-description);
-    margin: 0;
+    max-width: 80%;
+    margin: 0 auto;
   }
   i {
     position: absolute;
@@ -41,7 +55,6 @@
     font-size: 24px;
   }
   img {
-    width: 325px;
     height: 250px;
     margin: 0.5em;
   }
@@ -58,17 +71,21 @@
   }
 </style>
 
-<div class="console__item">
-  <i class="far fa-heart" />
-  <img src="PS.png" alt="Item Imagen" />
-  <h1>Play Station 4</h1>
-  <div class="console__description">
-    <p>Play Station 4 Slim</p>
-    <p>1TB Console</p>
-    <div class="price__section">
-      <p class="item__price--desc">Starts at</p>
-      <p class="item__price">$1000 USD</p>
+  <div class="console__item">
+    <i class="far fa-heart" />
+    <img src={data.image} alt="Item Imagen" />
+    <h1>{data.name}</h1>
+    <div class="console__description">
+      <p class="console_description_paragraph">{data.description}</p>
+      <div class="price__section">
+        <p class="item__price--desc">Starts at</p>
+        {#if $colombianFlag}
+          <p class="item__price">{colombianPrice} COL</p>
+        {:else}
+          <p class="item__price">{mexicanPrice} MXN</p>
+        {/if}
+      </div>
+      <button>Best Option!</button>
+      <a href={data.url}>URL</a>
     </div>
-    <button>Best Option!</button>
   </div>
-</div>

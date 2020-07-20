@@ -10,6 +10,7 @@ Object {
       "callbacks": Object {},
       "context": Map {},
       "ctx": Array [
+        "Last searched",
         undefined,
         Object {},
       ],
@@ -30,9 +31,13 @@ Object {
         [Function],
       ],
       "on_mount": Array [],
-      "props": Object {},
+      "props": Object {
+        "text": 0,
+      },
       "update": [Function],
     },
+    "$capture_state": [Function],
+    "$inject_state": [Function],
     "$set": [Function],
   },
   "container": <body>

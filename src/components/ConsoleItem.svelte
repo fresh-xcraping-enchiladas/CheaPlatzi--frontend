@@ -1,67 +1,65 @@
 <script>
   import cleanText from '../utils/cleanText';
+  import { colombianFlag } from '../stores/user'; 
   export let segment;
   export let image = 'PS.png';
   export let url = 'mock';
+  export let id = 1;
   export let name = 'PlayStation 4';
   export let price = 1000;
   export let description = 'PlayStation 4 description and features';
   export let commerce = 'Amazon';
   export let id_type_product = 1;
-  export let product_type = 'playstation';
+  export let product_type = "playstation";
   export let id_ecommerce = 1;
+
   switch (id_type_product) {
     case 1:
-      product_type = 'nintendo'
+      product_type = "nintendo";
       break;
     case 2:
-      product_type = 'xbox'
+      product_type = "xbox";
       break;
     case 3:
-      product_type = 'playstation'
+      product_type = "playstation";
       break;
     default:
-      product_type = 'default'
+      product_type = "default";
       break;
   }
   switch (id_ecommerce) {
     case 1:
-      commerce = 'MercadoLibre'
+      commerce = "MercadoLibre";
       break;
     case 2:
-      commerce = 'ColombiaGamer'
+      commerce = "ColombiaGamer";
       break;
     case 3:
-      commerce = 'OLX'
+      commerce = "OLX";
       break;
     case 4:
-      commerce = 'GamePlanet'
+      commerce = "GamePlanet";
       break;
     case 5:
-      commerce = 'Sears'
+      commerce = "Sears";
       break;
     case 6:
-      commerce = 'MixUp'
+      commerce = "MixUp";
       break;
     default:
-      commerce = 'default'
+      commerce = "default";
       break;
   }
-  if (id_ecommerce <= 3) {
-    price = price / 3623.12
-    price = price.toFixed(2)
-  } else {
-    price = price / 100
-    price = price / 22.44
-    price = price.toFixed(2)
-  }
+  price = parseFloat(price)
+  const colombianPrice = new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(price)
+  const mexicanPrice = new Intl.NumberFormat("es-MX", {style: "currency", currency: "MXN"}).format(price)
   description = cleanText(description)
 </script>
 
 <style>
   .console__item {
     width: 200px;
-    max-height: 350px;
+    max-height: 450px;
     text-align: center;
     margin-right: 1.3rem;
     line-height: 1.2rem;
@@ -144,11 +142,15 @@
 </style>
 
 <div class={`console__item ${product_type}`} data-url={url} >
-  <a aria-current={segment === 'item' ? 'page' : undefined} href="item">
+  <a aria-current={segment === 'item' ? 'page' : undefined} href={`item/${id}`}>
     <img src={image} alt="Item Imagen" />
-    <h1>{name.substring(0, 15)}</h1>
-    <h2>${price} USD</h2>
-    <p class="description">{description.substring(0, 20)}</p>
+    <h1>{name.substring(0, 20)}</h1>
+    {#if $colombianFlag}
+      <h2>COP {colombianPrice}</h2>
+      {:else}
+      <h2>MXN {mexicanPrice}</h2>
+    {/if}
+    <p class="description">{description.substring(0, 35)}</p>
   </a>
   <div class="item__provider">
     <p>{commerce}</p>
