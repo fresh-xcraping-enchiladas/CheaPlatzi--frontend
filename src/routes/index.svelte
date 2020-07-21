@@ -11,8 +11,6 @@
   import API_URL from "../config/config.js";
 
   const API = `${API_URL.API_URL}product?`;
-  const filterMx = "country=Mx";
-  const filterCol = "country=Col";
   let nintendoProducts = [];
   let playstationProducts = [];
   let xboxProducts = [];
@@ -30,7 +28,7 @@
   const handleInput = event => {
     event.preventDefault();
     searchInput = event.target.input.value;
-    fetch(`${API}name=${searchInput}&page=5`)
+    fetch(`${API}name=${searchInput}`)
       .then(response => response.json())
       .then(apiResponse => {
         searchedItems = apiResponse;
@@ -85,7 +83,9 @@
   <title>Gamecheap | Find your favorite console or videogames</title>
 </svelte:head>
 
-<div class="container__hero">
+
+<main>
+  <div class="container__hero">
   <h2>Explore the best videogames and consoles in your city.</h2>
   <TextInput
     placeholder="Find your favorite console or videogames"
@@ -109,10 +109,9 @@
       </Carousel>
     </Category>
   {/if}
-
+</div>
   <div class="container">
     <CategoryContainer />
-
     <Category>
       <Carousel>
         {#if nintendoProducts.length > 0}
@@ -180,4 +179,4 @@
       </Carousel>
     </Category>
   </div>
-</div>
+</main>
