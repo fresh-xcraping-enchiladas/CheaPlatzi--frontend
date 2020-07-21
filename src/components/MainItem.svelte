@@ -1,8 +1,9 @@
 <script>
-  import { colombianFlag } from '../stores/user';
+  import { copTousd, mxnTousd } from '../stores/currency';
+  import cleanText from '../utils/cleanText';
   export let data = {}
-  const colombianPrice = new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(data.price)
-  const mexicanPrice = new Intl.NumberFormat("es-MX", {style: "currency", currency: "MXN"}).format(data.price)
+  const colombianPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(data.price/copTousd)
+  const mexicanPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(data.price/mxnTousd)
 </script>
 
 <style>
@@ -76,16 +77,17 @@
     <img src={data.image} alt="Item Imagen" />
     <h1>{data.name}</h1>
     <div class="console__description">
-      <p class="console_description_paragraph">{data.description}</p>
+      <p class="console_description_paragraph">{cleanText(data.description)}</p>
       <div class="price__section">
         <p class="item__price--desc">Starts at</p>
-        {#if $colombianFlag}
-          <p class="item__price">{colombianPrice} COL</p>
+        {#if data.id_ecommerce < 4}
+          <p class="item__price">{colombianPrice} USD</p>
         {:else}
-          <p class="item__price">{mexicanPrice} MXN</p>
+          <p class="item__price">{mexicanPrice} USD</p>
         {/if}
       </div>
-      <button>Best Option!</button>
-      <a href={data.url}>URL</a>
+      <form action={data.url}>
+        <button>Best Option!</button>
+      </form>
     </div>
   </div>

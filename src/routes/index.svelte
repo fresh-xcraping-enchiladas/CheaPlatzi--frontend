@@ -10,36 +10,33 @@
   import { currentUser } from "../stores/user";
   import API_URL from "../config/config.js";
 
-  const API = `${API_URL.API_URL}product?id_ecommerce=4`;
-  let data = [];
-  let nintendoProducts = [];
-  let playstationProducts = [];
-  let xboxProducts = [];
+  const API = `${API_URL.API_URL}product?`;
+  const filterMx = 'country=Mx'
+  const filterCol = 'country=Col'
+  let nintendoProducts = []
+  let playstationProducts = []
+  let xboxProducts = []
   onMount(async () => {
-    const response = await fetch(API);
-    data = await response.json();
-    nintendoProducts = data.filter(item => item.id_type_product === 1);
-    nintendoProducts = nintendoProducts.slice(10, 20);
-    xboxProducts = data.filter(item => item.id_type_product === 2);
-    xboxProducts = xboxProducts.slice(10, 20);
-    playstationProducts = data.filter(item => item.id_type_product === 3);
-    playstationProducts = playstationProducts.slice(10, 20);
+    let response = await fetch(`${API}id_type_product=1&page=1`);
+    nintendoProducts = await response.json();
+    response = await fetch(`${API}id_type_product=2&page=1`);
+    playstationProducts = await response.json();
+    response = await fetch(`${API}id_type_product=3&page=1`);
+    xboxProducts = await response.json();
   });
 
   let searchInput = "";
+  let searchedItems = [];
   const handleInput = event => {
     searchInput = event.target.value;
     if (event.keyCode === 13) {
-      fetch(`${API}?name=${searchInput}`)
+      fetch(`${API}name=${searchInput}&page=5`)
         .then(response => response.json())
         .then(apiResponse => {
-          searchedItems = apiResponse.slice(0, 20);
+          searchedItems = apiResponse;
         });
     }
   };
-  let searchedItems = [];
-  if (searchInput > 2) {
-  }
 </script>
 
 <style>
@@ -108,7 +105,7 @@
       <Carousel>
         {#each searchedItems as item}
           <ConsoleItem
-             id={item.id}
+            id={item.id}
             image={item.image}
             url={item.url}
             name={item.name}
@@ -132,6 +129,7 @@
           {#each nintendoProducts as product}
             <ConsoleItem
               id={product.id}
+              barcode={product.barcode}
               image={product.image}
               url={product.url}
               name={product.name}
@@ -147,12 +145,13 @@
         {/if}
       </Carousel>
     </Category>
-    <Category>
+        <Category>
       <Carousel>
-        {#if nintendoProducts.length > 0}
+        {#if playstationProducts.length > 0}
           {#each playstationProducts as product}
             <ConsoleItem
               id={product.id}
+              barcode={product.barcode}
               image={product.image}
               url={product.url}
               name={product.name}
@@ -170,10 +169,11 @@
     </Category>
     <Category>
       <Carousel>
-        {#if nintendoProducts.length > 0}
+        {#if xboxProducts.length > 0}
           {#each xboxProducts as product}
             <ConsoleItem
               id={product.id}
+              barcode={product.barcode}
               image={product.image}
               url={product.url}
               name={product.name}

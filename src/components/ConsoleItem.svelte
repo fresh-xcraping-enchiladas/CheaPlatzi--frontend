@@ -1,6 +1,6 @@
 <script>
   import cleanText from '../utils/cleanText';
-  import { colombianFlag } from '../stores/user'; 
+  import { mxnTousd, copTousd } from '../stores/currency'; 
   export let segment;
   export let image = 'PS.png';
   export let url = 'mock';
@@ -51,8 +51,8 @@
       break;
   }
   price = parseFloat(price)
-  const colombianPrice = new Intl.NumberFormat("es-CO", {style: "currency", currency: "COP"}).format(price)
-  const mexicanPrice = new Intl.NumberFormat("es-MX", {style: "currency", currency: "MXN"}).format(price)
+  const colombianPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(price/copTousd)
+  const mexicanPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(price/mxnTousd)
   description = cleanText(description)
 </script>
 
@@ -141,14 +141,14 @@
   }
 </style>
 
-<div class={`console__item ${product_type}`} data-url={url} >
+<div class={`console__item ${product_type}`} data-url={url} id={id} >
   <a aria-current={segment === 'item' ? 'page' : undefined} href={`item/${id}`}>
     <img src={image} alt="Item Imagen" />
     <h1>{name.substring(0, 20)}</h1>
-    {#if $colombianFlag}
-      <h2>COP {colombianPrice}</h2>
+    {#if id_ecommerce < 4}
+      <h2>USD {colombianPrice}</h2>
       {:else}
-      <h2>MXN {mexicanPrice}</h2>
+      <h2>USD {mexicanPrice}</h2>
     {/if}
     <p class="description">{description.substring(0, 35)}</p>
   </a>
