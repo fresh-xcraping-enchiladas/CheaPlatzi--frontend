@@ -11,11 +11,11 @@
   import API_URL from "../config/config.js";
 
   const API = `${API_URL.API_URL}product?`;
-  const filterMx = 'country=Mx'
-  const filterCol = 'country=Col'
-  let nintendoProducts = []
-  let playstationProducts = []
-  let xboxProducts = []
+  const filterMx = "country=Mx";
+  const filterCol = "country=Col";
+  let nintendoProducts = [];
+  let playstationProducts = [];
+  let xboxProducts = [];
   onMount(async () => {
     let response = await fetch(`${API}id_type_product=1&page=1`);
     nintendoProducts = await response.json();
@@ -28,8 +28,8 @@
   let searchInput = "";
   let searchedItems = [];
   const handleInput = event => {
-    event.preventDefault()
-    searchInput = event.target.input.value
+    event.preventDefault();
+    searchInput = event.target.input.value;
     fetch(`${API}name=${searchInput}&page=5`)
       .then(response => response.json())
       .then(apiResponse => {
@@ -85,20 +85,11 @@
   <title>Gamecheap | Find your favorite console or videogames</title>
 </svelte:head>
 
-<div class="page-index">
-  {#if $currentUser}
-    <h2>
-      Welcome back
-      <strong>{$currentUser.displayName}!</strong>
-    </h2>
-  {:else}
-    <div class="container__hero">
-      <h2>Explore the best videogames and consoles in your city.</h2>
-      <TextInput
-        placeholder="Find your favorite console or videogames"
-        {handleInput} />
-    </div>
-  {/if}
+<div class="container__hero">
+  <h2>Explore the best videogames and consoles in your city.</h2>
+  <TextInput
+    placeholder="Find your favorite console or videogames"
+    {handleInput} />
   {#if searchedItems.length > 0}
     <Category text="Searched Items">
       <Carousel>
@@ -144,7 +135,7 @@
         {/if}
       </Carousel>
     </Category>
-        <Category>
+    <Category>
       <Carousel>
         {#if playstationProducts.length > 0}
           {#each playstationProducts as product}

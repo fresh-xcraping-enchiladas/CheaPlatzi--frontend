@@ -103,8 +103,8 @@
         <p>Gamecheap</p>
       </li>
       <li>
-        <a aria-current={segment === 'home' ? 'page' : undefined} href="/">
-          Home
+        <a aria-current={segment === 'blog' ? 'page' : undefined} href="blog">
+          Blog
         </a>
       </li>
       <li>
@@ -113,8 +113,8 @@
         </a>
       </li>
       <li>
-        <a aria-current={segment === 'blog' ? 'page' : undefined} href="blog">
-          Blog
+        <a aria-current={segment === 'home' ? 'page' : undefined} href="/">
+          Home
         </a>
       </li>
     </ul>

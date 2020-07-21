@@ -13,7 +13,7 @@
   export let product_type = "playstation";
   export let id_ecommerce = 1;
 
-  switch (id_type_product) {
+ switch (id_type_product) {
     case 1:
       product_type = "nintendo";
       break;
@@ -58,8 +58,8 @@
 
 <style>
   .console__item {
-    width: 200px;
-    max-height: 450px;
+    min-width: 250px;
+    min-height: 350px;
     text-align: center;
     margin-right: 1.3rem;
     line-height: 1.2rem;
@@ -68,42 +68,28 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 20px;
+    margin-bottom: 1.3rem;
   }
   .nintendo {
-    background-image: linear-gradient(
-      10deg,
-      var(--backcolor-nintendo),
-      var(--backcolor-nintendo) 50%,
-      var(--textcolor-nintendo)
-    );
-    color: var(--textcolor-nintendo);
+    background-image: linear-gradient(to top, #e50020, #df001f, #d9001e, #d3001d, #cd001c);
+    color: #fff;
   }
   .xbox {
-    background-image: linear-gradient(
-      10deg,
-      var(--backcolor-xbox),
-      var(--backcolor-xbox) 50%,
-      var(--textcolor-xbox)
-    );
-    color: var(--textcolor-xbox);
+    background-image: linear-gradient(to top, #107c10, #0f730f, #0d690e, #0c600c, #0b570b);
+    color: #fff;
   }
   .playstation {
-    background-image: linear-gradient(
-      10deg,
-      var(--backcolor-play),
-      var(--backcolor-play) 50%,
-      var(--textcolor-play)
-    );
-    color: var(--textcolor-play);
+     background-image: linear-gradient(to top, #007aff, #006fe5, #0064cc, #035ab3, #0b4f9a);
+    color: #fff;
   }
   .item__provider {
-    color: #735318;
+    color: #000;
     background-color: #cccc2e;
     font-weight: 600;
     margin: 10px auto 0;
-    padding: 0 10px;
-    border-radius: 6px 6px 0 0;
+    padding: 10px;
+    border-radius: 6px;
   }
   h1 {
     font-size: var(--card-title);
@@ -153,6 +139,6 @@
     <p class="description">{description.substring(0, 35)}</p>
   </a>
   <div class="item__provider">
-    <a href={url}>{`Ir a: ${commerce}`}</a>
+    <a href={url} target="_blank">{`Ir a: ${commerce}`}</a>
   </div>
 </div>
