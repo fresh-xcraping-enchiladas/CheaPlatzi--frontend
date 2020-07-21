@@ -28,14 +28,13 @@
   let searchInput = "";
   let searchedItems = [];
   const handleInput = event => {
-    searchInput = event.target.value;
-    if (event.keyCode === 13) {
-      fetch(`${API}name=${searchInput}&page=5`)
-        .then(response => response.json())
-        .then(apiResponse => {
-          searchedItems = apiResponse;
-        });
-    }
+    event.preventDefault()
+    searchInput = event.target.input.value
+    fetch(`${API}name=${searchInput}&page=5`)
+      .then(response => response.json())
+      .then(apiResponse => {
+        searchedItems = apiResponse;
+      });
   };
 </script>
 
@@ -120,25 +119,8 @@
     </Category>
   {/if}
 
-{#if searchedItems.length > 0}
-  <Category text="Searched Items">
-    <Carousel>
-      {#each searchedItems as item}
-        <ConsoleItem
-          id={item.id}
-          image={item.image}
-          url={item.url}
-          name={item.name}
-          price={item.price}
-          description={item.description}
-          commerce={item.commerce}
-          id_type_product={item.id_type_product}
-          product_type={item.product_type}
-          id_ecommerce={item.id_ecommerce} />
-      {/each}
-    </Carousel>
-  </Category>
-{/if}
+  <div class="container">
+    <CategoryContainer />
 
     <Category>
       <Carousel>

@@ -23,15 +23,11 @@
 </script>
 
 <script>
-  import { onMount } from "svelte";
   import MainItem from "../../components/MainItem.svelte";
   import ConsoleItem from "../../components/ConsoleItem.svelte";
   import Carousel from "../../components/Carousel.svelte";
   import Category from "../../components/Category.svelte";
   export let items
-  onMount(async () => {
-    
-  })
 </script>
 
 <style>
