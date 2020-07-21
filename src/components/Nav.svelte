@@ -35,7 +35,7 @@
   }
 
   a {
-    text-decoration: none
+    text-decoration: none;
   }
 
   nav ul {
@@ -122,6 +122,9 @@
       display: none;
     }
   }
+  .hide {
+    display: none;
+  }
 </style>
 
 <nav>
@@ -140,18 +143,12 @@
   </div>
   <ul>
     <li>
-      <a
-        class="current"
-        aria-current={segment === undefined ? 'page' : undefined}
-        href="/">
+      <a aria-current={segment === undefined ? 'page' : undefined} href="/">
         Home
       </a>
     </li>
     <li>
-      <a
-        class="current"
-        aria-current={segment === 'about' ? 'page' : undefined}
-        href="about">
+      <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
         About
       </a>
     </li>
@@ -170,17 +167,27 @@
         Favorites
       </a>
     </li>
-    <li>
-      <a aria-current={segment === 'signup' ? 'page' : undefined} href="signup">
-        Sign up
-      </a>
-    </li>
+    {#if $currentUser}
+      <li>
+        <a
+          class="hide"
+          aria-current={segment === 'signup' ? 'page' : undefined}
+          href="signup">
+          Sign up
+        </a>
+      </li>
+    {:else}
+      <li>
+        <a
+          aria-current={segment === 'signup' ? 'page' : undefined}
+          href="signup">
+          Sign up
+        </a>
+      </li>
+    {/if}
     <li>
       {#if !$currentUser}
-        <a
-          class="current"
-          aria-current={segment === 'login' ? 'page' : undefined}
-          href="login">
+        <a aria-current={segment === 'login' ? 'page' : undefined} href="login">
           <Button text="Log in" />
         </a>
       {:else}

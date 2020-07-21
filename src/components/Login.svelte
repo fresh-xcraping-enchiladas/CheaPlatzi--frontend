@@ -30,7 +30,7 @@
     on:click={() => {
       signOut();
     }}>
-    Log Out
+    Logout
   </button>
 {:else}
   <div id="firebaseui-auth-container" />

@@ -120,8 +120,25 @@
     </Category>
   {/if}
 
-  <div class="container">
-    <CategoryContainer />
+{#if searchedItems.length > 0}
+  <Category text="Searched Items">
+    <Carousel>
+      {#each searchedItems as item}
+        <ConsoleItem
+          id={item.id}
+          image={item.image}
+          url={item.url}
+          name={item.name}
+          price={item.price}
+          description={item.description}
+          commerce={item.commerce}
+          id_type_product={item.id_type_product}
+          product_type={item.product_type}
+          id_ecommerce={item.id_ecommerce} />
+      {/each}
+    </Carousel>
+  </Category>
+{/if}
 
     <Category>
       <Carousel>
