@@ -3,13 +3,9 @@
   import Button from "./Button.svelte";
   import { onMount } from "svelte";
   import { signOut } from "../utils/firebase";
-  import { currentUser, colombianFlag } from "../stores/user";
+  import { currentUser } from "../stores/user";
 
   export let segment;
-
-  function handleClick() {
-    colombianFlag.update(colombianFlag => !colombianFlag);
-  }
 </script>
 
 <style>
@@ -60,24 +56,16 @@
     margin: 0 15px;
   }
 
-  nav ul li a,
-  nav ul li button {
+  nav ul li a {
     position: relative;
     padding: 5px 0;
     color: var(--lightpurple-title);
     font-size: 18px;
     text-decoration: none;
     margin: 0;
-    background-color: transparent;
     border: none;
   }
-  nav ul li button {
-    color: var(--white);
-  }
-  nav ul li button:hover {
-    cursor: pointer;
-  }
-  nav ul li [aria-current="page"] {
+  nav ul li [aria-current="page"]{
     color: var(--primary-white);
   }
 
@@ -117,15 +105,13 @@
       line-height: 30px;
     }
 
-    nav ul li a,
-    nav ul li button {
+    nav ul li a{
       position: relative;
       padding: 5px 0;
       color: var(--lightpurple-title);
       font-size: 18px;
       text-decoration: none;
       margin: 0;
-      background-color: transparent;
       border: none;
     }
 
@@ -206,13 +192,6 @@
         </a>
       {:else}
         <Login />
-      {/if}
-    </li>
-    <li>
-      {#if $colombianFlag}
-        <button on:click={handleClick}>COL 🇨🇴</button>
-      {:else}
-        <button on:click={handleClick}>MEX 🇲🇽</button>
       {/if}
     </li>
   </ul>
