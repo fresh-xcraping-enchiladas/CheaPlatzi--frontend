@@ -17,7 +17,7 @@
   const handleInput = event => {
     event.preventDefault();
     searchInput = event.target.input.value;
-    fetch(`${API}name=${searchInput}&id_type_product=1&page=1`)
+    fetch(`${API}name=${searchInput}&id_type_product=2&page=1`)
       .then(response => response.json())
       .then(apiResponse => {
         searchedItems = apiResponse;

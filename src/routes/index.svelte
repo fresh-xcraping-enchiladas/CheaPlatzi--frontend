@@ -90,6 +90,7 @@
   <TextInput
     placeholder="Find your favorite console or videogames"
     {handleInput} />
+</div>
   {#if searchedItems.length > 0}
     <Category text="Searched Items">
       <Carousel>
@@ -109,7 +110,6 @@
       </Carousel>
     </Category>
   {/if}
-</div>
   <div class="container">
     <CategoryContainer />
     <Category>
