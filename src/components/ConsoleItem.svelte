@@ -138,6 +138,6 @@
     <p class="description">{description.substring(0, 35)}</p>
   </a>
   <div class="item__provider">
-    <a href={url}>{`Ir a: ${commerce}`}</a>
+    <a href={url} target="_blank">{`Ir a: ${commerce}`}</a>
   </div>
 </div>
