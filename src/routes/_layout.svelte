@@ -69,11 +69,13 @@
   }
 </style>
 
-<UserObserver />
-<Nav {segment} />
+<div>
+  <UserObserver />
+  <Nav {segment} />
 
-<main>
-  <slot />
-</main>
+  <main>
+    <slot />
+  </main>
 
-<Footer />
+  <Footer />
+</div>

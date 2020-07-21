@@ -58,7 +58,7 @@
 
 <style>
   .console__item {
-    min-width: 250px;
+    width: 350px;
     min-height: 350px;
     text-align: center;
     margin-right: 1.3rem;
@@ -68,7 +68,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 1.3rem;
   }
   .nintendo {
     background-image: linear-gradient(to top, #e50020, #df001f, #d9001e, #d3001d, #cd001c);

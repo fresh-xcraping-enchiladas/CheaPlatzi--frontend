@@ -1,5 +1,6 @@
 <script context="module">
   import API_URL from "../../config/config.js"
+  import { mxnTousd, copTousd } from '../../stores/currency'; 
   const API = `${API_URL.API_URL}product`;
   export async function preload(page, session) {
 		const { slug } = page.params;
@@ -8,11 +9,19 @@
     const response = await this.fetch(`${API}?barcode=${item.barcode}`)
     let items = []
     items = await response.json()
+    function priceToUSD ( item ) {
+      if (item.id_ecommerce < 4) {
+        return item.price/copTousd
+      }
+      return item.price/mxnTousd
+    }
     function compare( a, b ) {
-      if ( a.price < b.price ){
+      const firstPrice = priceToUSD(a)
+      const secondPrice = priceToUSD(b)
+      if ( firstPrice < secondPrice ){
         return -1;
       }
-      if ( a.price > b.price ){
+      if ( firstPrice > secondPrice ){
         return 1;
       }
       return 0;
