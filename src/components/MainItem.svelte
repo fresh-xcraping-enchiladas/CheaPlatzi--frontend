@@ -10,12 +10,12 @@
   .console__item {
     width: auto;
     color: #000;
-    padding: 0.2em;
+    padding: 0.4em;
     text-align: center;
     line-height: 1.2rem;
     border-radius: 7px;
     position: relative;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.42);
   }
   .console__description {
     text-align: left;
@@ -23,7 +23,7 @@
     line-height: 1.5rem;
   }
   .console_description_paragraph{
-    max-height: 200px;
+    min-height: 200px;
     overflow: scroll;
   }
   .price__section {
@@ -33,11 +33,11 @@
   }
   .item__price--desc {
     font-size: 16px;
-    color: #cdcdcd;
+    color: #000;
   }
   .item__price {
-    color: var(--lightpurple-text);
-    font-size: 21px;
+    color: #000;
+    font-size: 30px;
   }
   h1 {
     font-size: var(--item-title);
@@ -48,6 +48,7 @@
     font-size: var(--item-description);
     max-width: 80%;
     margin: 0 auto;
+    line-height: 28px;
   }
   i {
     position: absolute;
@@ -56,8 +57,7 @@
     font-size: 24px;
   }
   img {
-    height: 250px;
-    margin: 0.5em;
+    width: 400px;
   }
   button {
     border: none;
@@ -74,7 +74,7 @@
 
   <div class="console__item">
     <i class="far fa-heart" />
-    <img src={data.image} alt="Item Imagen" />
+    <img src={data.image} alt={data.name} />
     <h1>{data.name}</h1>
     <div class="console__description">
       <p class="console_description_paragraph">{cleanText(data.description)}</p>
