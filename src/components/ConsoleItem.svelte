@@ -58,7 +58,7 @@
 
 <style>
   .console__item {
-    width: 350px;
+    max-width: 350px;
     min-height: 350px;
     text-align: center;
     margin-right: 1.3rem;
