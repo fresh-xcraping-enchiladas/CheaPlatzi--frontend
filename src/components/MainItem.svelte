@@ -4,6 +4,30 @@
   export let data = {}
   const colombianPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(data.price/copTousd)
   const mexicanPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(data.price/mxnTousd)
+  let commerce = null;
+  switch (data.id_ecommerce) {
+    case 1:
+      commerce = "MercadoLibre";
+      break;
+    case 2:
+      commerce = "ColombiaGamer";
+      break;
+    case 3:
+      commerce = "OLX";
+      break;
+    case 4:
+      commerce = "GamePlanet";
+    break;
+    case 5:
+      commerce = "Sears";
+      break;
+    case 6:
+      commerce = "MixUp";
+      break;
+    default:
+      commerce = "default";
+      break;
+  }
 </script>
 
 <style>
@@ -59,16 +83,20 @@
   img {
     width: 400px;
   }
-  button {
+  a {
     border: none;
     color: var(--purple-button);
     background-color: var(--lightpurple-subtitle);
-    padding: 0.3rem;
+    padding: 0.4rem;
     margin-top: 1.4em;
     border-radius: 3px;
     width: 100%;
     font-size: 20px;
     font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
   }
 </style>
 
@@ -86,8 +114,8 @@
           <p class="item__price">{mexicanPrice} USD</p>
         {/if}
       </div>
-      <form action={data.url}>
-        <button>Best Option!</button>
-      </form>
+      <a href={data.url} target="_blank">
+        Best Option in {commerce}
+      </a>
     </div>
   </div>
