@@ -153,6 +153,6 @@
     <p class="description">{description.substring(0, 35)}</p>
   </a>
   <div class="item__provider">
-    <p>{commerce}</p>
+    <a href={url}>{`Ir a: ${commerce}`}</a>
   </div>
 </div>
