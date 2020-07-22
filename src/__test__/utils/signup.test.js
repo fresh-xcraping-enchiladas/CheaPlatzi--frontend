@@ -42,13 +42,3 @@ jest.mock('firebase', () => {
         })
     };
 });
-
-test('should dispatch sign up action', async () => {
-    const signup = stlRender(Login)
-
-    const emailSign = signup.container.getElementById('#emailSign')
-
-    await signUp();
-
-    expect(signUp).toHaveBeenCalled();
-});

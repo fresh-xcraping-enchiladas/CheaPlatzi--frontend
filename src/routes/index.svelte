@@ -25,13 +25,20 @@
 
   let searchInput = "";
   let searchedItems = [];
+  let error = false;
   const handleInput = event => {
     event.preventDefault();
+    searchedItems = [];
     searchInput = event.target.input.value;
     fetch(`${API}name=${searchInput}&page=1`)
       .then(response => response.json())
       .then(apiResponse => {
         searchedItems = apiResponse;
+        if (searchedItems.length === 0){
+          error = true
+        } else {
+          error = false
+        }
       });
   };
 </script>
@@ -109,6 +116,13 @@
         {/each}
       </Carousel>
     </Category>
+  {/if}
+  {#if error}
+  <div class="error_container">
+    <h2 style="color: red; text-align: center; margin-top: 20px;">
+      No item was found with that description. Try again
+    </h2>
+  </div>
   {/if}
   <div class="container">
     <CategoryContainer />
