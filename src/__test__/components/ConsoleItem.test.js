@@ -3,6 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import ConsoleItem from '../../components/ConsoleItem.svelte';
 import playstationMock from './__mocks__/playstation_mock.json'
 import cleanText from '../../utils/cleanText';
+import { mxnTousd } from '../../stores/currency';
 
 describe('<ConsoleItem /> Component', () => {  
   test('Check the UI of the ConsoleItem component', () => {
@@ -20,14 +21,19 @@ describe('<ConsoleItem /> Component', () => {
     expect(title).toHaveTextContent(playstationMock.name)
 
     const price = consoleItem.container.getElementsByTagName('h2')[0]
-    expect(price).toHaveTextContent(playstationMock.price)
+    const expectedPrice = new Intl.NumberFormat(
+      "en-US", 
+      {style: "currency", currency: "USD"}
+    )
+    .format(playstationMock.price/mxnTousd)
+    expect(price).toHaveTextContent(expectedPrice)
 
     const description = consoleItem.container.getElementsByClassName('description')[0]
     expect(description.textContent).toEqual(cleanText(playstationMock.description))
 
     const ecommerce = consoleItem.container
     .getElementsByClassName('item__provider')[0].children[0].textContent
-    expect(ecommerce).toEqual('GamePlanet')
+    expect(ecommerce).toEqual('Ir a: GamePlanet')
 
     const classList = consoleItem.container.classList.contains('playstation')
     expect(classList).toBeTruthy

@@ -14,11 +14,14 @@ Object {
         "MercadoLibre",
         "nintendo",
         undefined,
-        "PlayStation 4",
-        1000,
-        undefined,
-        undefined,
+        "PS.png",
+        "mock",
         1,
+        "PlayStation 4",
+        1,
+        "$0.28",
+        "$44.37",
+        1000,
         1,
       ],
       "dirty": Array [
@@ -41,14 +44,15 @@ Object {
       "props": Object {
         "commerce": 1,
         "description": 0,
-        "id_ecommerce": 9,
-        "id_type_product": 8,
-        "image": 6,
-        "name": 4,
-        "price": 5,
+        "id": 6,
+        "id_ecommerce": 8,
+        "id_type_product": 12,
+        "image": 4,
+        "name": 7,
+        "price": 11,
         "product_type": 2,
         "segment": 3,
-        "url": 7,
+        "url": 5,
       },
       "update": [Function],
     },
@@ -60,9 +64,11 @@ Object {
     <div>
       <div
         class="console__item nintendo"
+        data-url="mock"
+        id="1"
       >
         <a
-          href="item"
+          href="item/1"
         >
           <img
             alt="Item Imagen"
@@ -74,24 +80,25 @@ Object {
           </h1>
            
           <h2>
-            $
-            1000
-             USD
+            USD $0.28
           </h2>
            
           <p
             class="description"
           >
-            PlayStation 4 description and features
+            PlayStation 4 description and featu
           </p>
         </a>
          
         <div
           class="item__provider"
         >
-          <p>
-            MercadoLibre
-          </p>
+          <a
+            href="mock"
+            target="_blank"
+          >
+            Ir a: MercadoLibre
+          </a>
         </div>
       </div>
     </div>

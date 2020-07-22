@@ -15,7 +15,7 @@
     padding-left: 20px;
     border-radius: 50px;
     outline: none;
-    border: 0.5px #eaeaea;
+    border: solid .5px #898989;
     font-size: 24px;
     color: #000;
     background-color: #fff;
@@ -31,8 +31,27 @@
       font-size: 20px;
     }
   }
+  button {
+    display: inherit;
+    margin: 10px auto;
+    height: 100%;
+    padding: 5px 15px;
+    color: var(--lightpurple-text);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: #643173;
+  }
+  button:hover {
+    background-color: #7d5ba6;
+    color: #643173;
+  }
 </style>
 
 <div class="container-input">
-    <input on:keypress={handleInput} type="text" name="input" {placeholder} id="" />
+    <form on:submit|preventDefault={handleInput}>
+      <input type="text" name="input" {placeholder} id="" />
+      <button type="submit"> Search </button>
+    </form>
 </div>

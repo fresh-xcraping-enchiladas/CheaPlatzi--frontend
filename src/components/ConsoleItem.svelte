@@ -1,5 +1,6 @@
 <script>
   import cleanText from '../utils/cleanText';
+  import { mxnTousd, copTousd } from '../stores/currency'; 
   export let segment;
   export let image = 'PS.png';
   export let url = 'mock';
@@ -12,7 +13,7 @@
   export let product_type = "playstation";
   export let id_ecommerce = 1;
 
-  switch (id_type_product) {
+ switch (id_type_product) {
     case 1:
       product_type = "nintendo";
       break;
@@ -50,26 +51,15 @@
       break;
   }
   price = parseFloat(price)
-  console.log(price)
-  price = new Intl.NumberFormat("en-US", {style: "currency", currency: "MXN"}).format(price)
-  console.log(price)
-  // if (id_ecommerce <= 3) {
-  //   price = price / 3623.12
-  //   price = price.toFixed(2)
-  // } else {
-  //   if (price >= 100000) {
-  //     price = price / 100
-  //   }
-  //   price = price / 22.44
-  //   price = price.toFixed(2)
-  // }
+  const colombianPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(price/copTousd)
+  const mexicanPrice = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"}).format(price/mxnTousd)
   description = cleanText(description)
 </script>
 
 <style>
   .console__item {
-    width: 200px;
-    max-height: 450px;
+    max-width: 350px;
+    min-height: 350px;
     text-align: center;
     margin-right: 1.3rem;
     line-height: 1.2rem;
@@ -78,42 +68,28 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 1.3rem;
   }
   .nintendo {
-    background-image: linear-gradient(
-      10deg,
-      var(--backcolor-nintendo),
-      var(--backcolor-nintendo) 50%,
-      var(--textcolor-nintendo)
-    );
-    color: var(--textcolor-nintendo);
+    background-image: linear-gradient(to top, #e50020, #df001f, #d9001e, #d3001d, #cd001c);
+    color: #fff;
   }
   .xbox {
-    background-image: linear-gradient(
-      10deg,
-      var(--backcolor-xbox),
-      var(--backcolor-xbox) 50%,
-      var(--textcolor-xbox)
-    );
-    color: var(--textcolor-xbox);
+    background-image: linear-gradient(to top, #107c10, #0f730f, #0d690e, #0c600c, #0b570b);
+    color: #fff;
   }
   .playstation {
-    background-image: linear-gradient(
-      10deg,
-      var(--backcolor-play),
-      var(--backcolor-play) 50%,
-      var(--textcolor-play)
-    );
-    color: var(--textcolor-play);
+     background-image: linear-gradient(to top, #007aff, #006fe5, #0064cc, #035ab3, #0b4f9a);
+    color: #fff;
   }
   .item__provider {
-    color: #735318;
+    color: #000;
     background-color: #cccc2e;
     font-weight: 600;
     margin: 10px auto 0;
-    padding: 0 10px;
-    border-radius: 6px 6px 0 0;
+    padding: 10px;
+    border-radius: 6px;
   }
   h1 {
     font-size: var(--card-title);
@@ -151,18 +127,18 @@
   }
 </style>
 
-<div class={`console__item ${product_type}`} data-url={url} >
+<div class={`console__item ${product_type}`} data-url={url} id={id} >
   <a aria-current={segment === 'item' ? 'page' : undefined} href={`item/${id}`}>
     <img src={image} alt="Item Imagen" />
-    <h1>{name.substring(0, 15)}</h1>
-    {#if id_ecommerce > 3}
-      <h2>{price}</h2>
+    <h1>{name.substring(0, 20)}</h1>
+    {#if id_ecommerce < 4}
+      <h2>USD {colombianPrice}</h2>
       {:else}
-      <h2>{price}</h2>
+      <h2>USD {mexicanPrice}</h2>
     {/if}
-    <p class="description">{description.substring(0, 20)}</p>
+    <p class="description">{description.substring(0, 35)}</p>
   </a>
   <div class="item__provider">
-    <p>{commerce}</p>
+    <a href={url} target="_blank">{`Ir a: ${commerce}`}</a>
   </div>
 </div>

@@ -75,9 +75,14 @@ Object {
             />
           </a>
            
-          <h1>
-            Gamecheap
-          </h1>
+          <a
+            aria-current="page"
+            href="/"
+          >
+            <h1>
+              Gamecheap
+            </h1>
+          </a>
         </div>
          
         <ul>
@@ -119,7 +124,7 @@ Object {
             <a
               href="signup"
             >
-              Sign Up
+              Sign up
             </a>
           </li>
            
@@ -131,12 +136,6 @@ Object {
                 Log in
               </button>
             </a>
-          </li>
-           
-          <li>
-            <p>
-              MEX 🇲🇽
-            </p>
           </li>
         </ul>
       </nav>

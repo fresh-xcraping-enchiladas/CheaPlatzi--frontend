@@ -14,7 +14,35 @@
 
 <style>
   .blog__container {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr;
     padding: 1em;
+  }
+
+  .blog__posts {
+    grid-template-columns: repeat(3, 33%);
+  }
+
+  .blog__inner {
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1.5rem;
+    grid-row-gap: 1.5em;
+    display: grid;
+  }
+  .blog__post {
+    text-decoration: none;
+    box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+      1px 3px 8px rgba(39, 44, 49, 0.03);
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+    display: block;
+    /* animation-duration: 2s; */
+    /* animation-name: fade; */
+  }
+
+  img{
+    height: 50px;
   }
 
   @media (min-width: 320px) {
@@ -35,16 +63,18 @@
 
 <div class="blog__container">
   <h1>Recent posts</h1>
-
-  <ul>
-    {#each posts as post}
-      <!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-      <li>
-        <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
-      </li>
-    {/each}
-  </ul>
+  <div class="blog__posts">
+    <div class="blog__inner">
+      <div class="blog__post">
+        <ul>
+          {#each posts as post}
+            <li>
+              <img src={post.image} alt="" />
+              <a rel="prefetch" href="blog/{post.slug}">{post.title}</a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
