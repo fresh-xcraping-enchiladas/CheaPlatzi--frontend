@@ -17,7 +17,7 @@
   />
   <CategoryItem 
     category="xbox" 
-    src="xbox.png" 
+    src="xbox_1.png" 
     alt="logo de xbox"
     href="category/xbox"
   />
