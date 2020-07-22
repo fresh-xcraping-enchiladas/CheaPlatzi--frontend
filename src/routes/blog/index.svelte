@@ -25,7 +25,7 @@
   }
 
   .blog__inner {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1.5rem;
     grid-row-gap: 1.5em;
     display: grid;
@@ -45,10 +45,14 @@
     height: 50px;
   }
 
+  li {
+    padding: 20px 0;
+  }
+
   @media (min-width: 320px) {
     .blog__container {
       padding: 5em 2em;
-      height: 100vh;
+      height: 80vh;
     }
   }
   ul {

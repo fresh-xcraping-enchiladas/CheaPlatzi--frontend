@@ -98,6 +98,11 @@
     cursor: pointer;
     text-align: center;
   }
+  @media screen and (max-width:700px){
+    img{
+      width: 80vw;
+    }
+  }
 </style>
 
   <div class="console__item">

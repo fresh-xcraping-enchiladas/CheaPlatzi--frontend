@@ -70,8 +70,6 @@
         commerce = "default";
         break;
     }
-
-    console.log(product_type, commerce, name, items)
     window.ga('send', 'pageview', `${product_type}/${commerce}/${name}`);
 
 		return { items };

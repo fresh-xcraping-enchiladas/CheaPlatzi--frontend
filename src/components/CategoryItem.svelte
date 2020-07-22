@@ -9,7 +9,7 @@
   .category-item {
     width: 250px;
     height: 60px;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 0 20px;
     margin: 0 auto 40px;
     font-size: 18px;
@@ -73,16 +73,8 @@
 </style>
 
 <div class={`category-item ${category}`}>
-  {#if category === 'nintendo' || category === 'Nintendo'}
-    <p>Nintendo</p>
-    <img src="nintendo-switch.png" alt="" />
-  {/if}
-  {#if category === 'playstation' || category === 'Playstation'}
-    <p>PlayStation</p>
-    <img src="sony.png" alt="" />
-  {/if}
-  {#if category === 'xbox' || category === 'Xbox'}
-    <p>Xbox</p>
-    <img src="xbox_1.png" alt="" />
-  {/if}
+  <a href={href}>
+    <p style="text-transform: capitalize;">{category}</p>
+    <img src={src} alt={alt} style="height: 90%;"/>
+  </a>
 </div>
