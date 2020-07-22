@@ -28,7 +28,7 @@
   const handleInput = event => {
     event.preventDefault();
     searchInput = event.target.input.value;
-    fetch(`${API}name=${searchInput}`)
+    fetch(`${API}name=${searchInput}&page=1`)
       .then(response => response.json())
       .then(apiResponse => {
         searchedItems = apiResponse;
@@ -90,6 +90,7 @@
   <TextInput
     placeholder="Find your favorite console or videogames"
     {handleInput} />
+</div>
   {#if searchedItems.length > 0}
     <Category text="Searched Items">
       <Carousel>
@@ -109,7 +110,6 @@
       </Carousel>
     </Category>
   {/if}
-</div>
   <div class="container">
     <CategoryContainer />
     <Category>
