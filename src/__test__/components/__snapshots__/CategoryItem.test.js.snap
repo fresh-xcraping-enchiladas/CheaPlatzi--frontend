@@ -11,6 +11,9 @@ Object {
       "context": Map {},
       "ctx": Array [
         undefined,
+        undefined,
+        undefined,
+        undefined,
       ],
       "dirty": Array [
         -1,
@@ -30,7 +33,10 @@ Object {
       ],
       "on_mount": Array [],
       "props": Object {
+        "alt": 2,
         "category": 0,
+        "href": 3,
+        "src": 1,
       },
       "update": [Function],
     },
@@ -43,8 +49,17 @@ Object {
       <div
         class="category-item undefined"
       >
-         
-         
+        <a>
+          <p
+            style="text-transform: capitalize;"
+          >
+            undefined
+          </p>
+           
+          <img
+            style="width: 100px;"
+          />
+        </a>
       </div>
     </div>
   </body>,

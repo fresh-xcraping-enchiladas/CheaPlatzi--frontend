@@ -14,8 +14,9 @@
 
 <style>
   .blog__container {
+    width: 80vw;
     display: grid;
-    grid-template-columns: minmax(auto, 976px);
+    grid-template-columns: 1fr;
     padding: 1em;
   }
 
@@ -24,7 +25,7 @@
   }
 
   .blog__inner {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 1.5rem;
     grid-row-gap: 1.5em;
     display: grid;
@@ -38,6 +39,10 @@
     display: block;
     /* animation-duration: 2s; */
     /* animation-name: fade; */
+  }
+
+  img{
+    height: 50px;
   }
 
   @media (min-width: 320px) {
@@ -58,7 +63,6 @@
 
 <div class="blog__container">
   <h1>Recent posts</h1>
-
   <div class="blog__posts">
     <div class="blog__inner">
       <div class="blog__post">

@@ -70,9 +70,9 @@ Object {
              
             <li>
               <a
-                href="/"
+                href="blog"
               >
-                Home
+                Blog
               </a>
             </li>
              
@@ -86,9 +86,9 @@ Object {
              
             <li>
               <a
-                href="blog"
+                href="/"
               >
-                Blog
+                Home
               </a>
             </li>
           </ul>

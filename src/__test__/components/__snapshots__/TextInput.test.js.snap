@@ -45,12 +45,20 @@ Object {
       <div
         class="container-input"
       >
-        <input
-          id=""
-          name="input"
-          placeholder="Find your favorite console"
-          type="text"
-        />
+        <form>
+          <input
+            id=""
+            name="input"
+            placeholder="Find your favorite console"
+            type="text"
+          />
+           
+          <button
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
       </div>
     </div>
   </body>,

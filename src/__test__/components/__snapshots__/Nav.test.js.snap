@@ -12,8 +12,6 @@ Object {
       "ctx": Array [
         undefined,
         null,
-        true,
-        [Function],
       ],
       "dirty": Array [
         -1,
@@ -29,7 +27,6 @@ Object {
       },
       "not_equal": [Function],
       "on_destroy": Array [
-        [Function],
         [Function],
         [Function],
       ],
@@ -92,7 +89,6 @@ Object {
           <li>
             <a
               aria-current="page"
-              class="current"
               href="/"
             >
               Home
@@ -101,7 +97,6 @@ Object {
            
           <li>
             <a
-              class="current"
               href="about"
             >
               About
@@ -135,19 +130,12 @@ Object {
            
           <li>
             <a
-              class="current"
               href="login"
             >
               <button>
                 Log in
               </button>
             </a>
-          </li>
-           
-          <li>
-            <button>
-              MEX 🇲🇽
-            </button>
           </li>
         </ul>
       </nav>
