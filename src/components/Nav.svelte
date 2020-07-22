@@ -55,8 +55,7 @@
     margin: 0 15px;
   }
 
-  nav ul li a, 
-  nav ul li button {
+  nav ul li a {
     position: relative;
     padding: 5px 0;
     color: var(--lightpurple-title);
@@ -65,7 +64,7 @@
     margin: 0;
     border: none;
   }
-  nav ul li [aria-current="page"]{
+  nav ul li [aria-current="page"] {
     color: var(--primary-white);
   }
 
@@ -105,7 +104,7 @@
       line-height: 30px;
     }
 
-    nav ul li a{
+    nav ul li a {
       position: relative;
       padding: 5px 0;
       color: var(--lightpurple-title);

@@ -131,10 +131,18 @@
         </a>
       </li>
       <li>
-        <a href=".">Brand</a>
+        <a
+          href="https://www.notion.so/ebf27b9666cd4bb3b4b6f5ad4113da7e?v=369bd9f3964f437fa4ceeb7420849d79"
+          target="_blank">
+          Brand
+        </a>
       </li>
       <li>
-        <a href=".">The Team</a>
+        <a
+          href="https://www.notion.so/Team-dd4cb0a5ac5a414f97989559fc09ca3c"
+          target="_blank">
+          The Team
+        </a>
       </li>
     </ul>
   </div>
