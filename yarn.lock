@@ -1355,6 +1355,13 @@
     magic-string "^0.25.2"
     resolve "^1.11.0"
 
+"@rollup/plugin-json@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-json/-/plugin-json-4.1.0.tgz#54e09867ae6963c593844d8bd7a9c718294496f3"
+  integrity sha512-yfLbTdNS6amI/2OpmbiBoW12vngr5NW2jCJVZSBEz+H5KfUJZ2M7sDjk0U6GOOdCWFVScShte29o9NezJ53TPw==
+  dependencies:
+    "@rollup/pluginutils" "^3.0.8"
+
 "@rollup/plugin-node-resolve@^8.0.0":
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-8.1.0.tgz#1da5f3d0ccabc8f66f5e3c74462aad76cfd96c47"
@@ -5460,9 +5467,9 @@ xregexp@^4.2.4:
     "@babel/runtime-corejs3" "^7.8.3"
 
 y18n@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
-  integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.1.tgz#8db2b83c31c5d75099bb890b23f3094891e247d4"
+  integrity sha512-wNcy4NvjMYL8gogWWYAO7ZFWFfHcbdbE57tZO8e4cbpj8tfUcwrwqSl3ad8HxpYWCdXcJUCeKKZS62Av1affwQ==
 
 yargs-parser@^18.1.2:
   version "18.1.3"
